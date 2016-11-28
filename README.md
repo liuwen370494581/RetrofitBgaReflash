@@ -4,8 +4,8 @@
 已经是完全封装好的 直接可以使用即可的
 
 private void getDateFromService() {
-        showLoadDialog("请稍等");
-        UserApi.getInstance().getKuaidInfo("zhongtong", "418271182599", new HttpSubscriber<wuLiuInfo>(new SubscriberOnListener() {
+          showLoadDialog("请稍等");
+           UserApi.getInstance().getKuaidInfo("zhongtong", "418271182599", new HttpSubscriber<wuLiuInfo>(new SubscriberOnListener() {
             @Override
             public void onSucceed(Object data) {
                 mListData.addAll((Collection<? extends wuLiuInfo>) data);
