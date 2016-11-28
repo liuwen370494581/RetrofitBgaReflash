@@ -1,0 +1,2 @@
+# RetrofitBgaReflash
+这个项目使用了Retrofit和Rxjava访问网络和BGAreflash下拉刷新和上拉加载
