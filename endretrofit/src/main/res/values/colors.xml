@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="item_press">#AAff0000</color>
+    <color name="item_normal">#44ff0000</color>
+    <color name="item_normal22">#22ff0000</color>
+
+    <color name="common_title">#F9F9F9</color>
+    <color name="blue">#499BF7</color>
+    <color name="whites">#ffffff</color>
+    <color name="gray_font">#000000</color>
+    <color name="yellow_warning">#FFFF99</color>
+</resources>

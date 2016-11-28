@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context="com.ywl5320.rxjavaretrofit.MainActivity">
+
+  <include layout="@layout/layout_netbar"/>
+
+  <Button
+      android:id="@+id/btn_login"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="获取天气数据"/>
+
+  <Button
+      android:id="@+id/btn_reflash"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_below="@id/btn_login"
+      android:onClick="toReflash"
+      android:text="跳转到下拉刷新上拉加载页面"/>
+
+  <Button
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_below="@id/btn_reflash"
+      android:onClick="toRecyclerView"
+      android:text="跳转到普通页面"/>
+</RelativeLayout>
