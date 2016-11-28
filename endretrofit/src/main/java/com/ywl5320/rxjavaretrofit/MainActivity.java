@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.ywl5320.rxjavaretrofit.Activity.BananerRefalshActivity;
 import com.ywl5320.rxjavaretrofit.Activity.DefineLoadWithRefreshActivity;
 import com.ywl5320.rxjavaretrofit.Activity.NormalRecyclerActivity;
 import com.ywl5320.rxjavaretrofit.dialog.LoadDialog;
@@ -71,9 +72,14 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(MainActivity.this, DefineLoadWithRefreshActivity.class));
     }
 
-    public void toRecyclerView(View view){
+    public void toRecyclerView(View view) {
         startActivity(new Intent(MainActivity.this, NormalRecyclerActivity.class));
     }
+
+    public void toBananerReflash(View view) {
+        startActivity(new Intent(MainActivity.this, BananerRefalshActivity.class));
+    }
+
 
     public void showLoadDialog(String msg) {
         if (loadDialog == null) {

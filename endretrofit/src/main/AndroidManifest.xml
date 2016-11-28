@@ -25,8 +25,10 @@
     </activity>
     <!--自定义的下拉刷新和上拉加载页面-->
     <activity android:name=".Activity.DefineLoadWithRefreshActivity"/>
-    <!--普通的recyclerView-->
+    <!--带广告头recyclerView-->
     <activity android:name=".Activity.NormalRecyclerActivity"/>
+    <!--带广告头的上拉刷新和下拉加载页面-->
+    <activity android:name=".Activity.BananerRefalshActivity"/>
   </application>
 
 </manifest>

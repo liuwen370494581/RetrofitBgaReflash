@@ -47,7 +47,8 @@ public class DefineLoadWithRefreshActivity extends BaseActivity implements BGARe
     /**
      * 设置一共请求多少次数据
      */
-    private int ALLSUM = 0;
+    private int page = 0;
+    private int totalpage = 2;
     /**
      * 设置刷新和加载
      */
@@ -123,6 +124,18 @@ public class DefineLoadWithRefreshActivity extends BaseActivity implements BGARe
         mBGARefreshLayout.setDelegate(this);
         mRecyclerViewAdapter = new RecyclerViewAdapter(mContext, mListData);
         mRecyclerView.setAdapter(mRecyclerViewAdapter);
+        //点击事件
+        mRecyclerViewAdapter.setOnItemClickListener(new RecyclerViewAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(View v, int position) {
+                Toast.makeText(mContext, "onclick  " + position, Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onItemLongClick(View v, int position) {
+                Toast.makeText(mContext, "onlongclick  " + position, Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     /**
@@ -172,30 +185,11 @@ public class DefineLoadWithRefreshActivity extends BaseActivity implements BGARe
 
     private void setData() {
         getDateFromService();
-        if (ALLSUM == 0) {
-            setRecyclerCommadapter();
-        } else {
+        if (page > 0) {
             mRecyclerViewAdapter.notifyDataSetChanged();
         }
     }
 
-    /**
-     * 数据填充
-     */
-    private void setRecyclerCommadapter() {
-        //点击事件
-        mRecyclerViewAdapter.setOnItemClickListener(new RecyclerViewAdapter.OnItemClickListener() {
-            @Override
-            public void onItemClick(View v, int position) {
-                Toast.makeText(mContext, "onclick  " + position, Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onItemLongClick(View v, int position) {
-                Toast.makeText(mContext, "onlongclick  " + position, Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
 
     /**
      * 刷新
@@ -204,7 +198,7 @@ public class DefineLoadWithRefreshActivity extends BaseActivity implements BGARe
     public void onBGARefreshLayoutBeginRefreshing(BGARefreshLayout refreshLayout) {
         mDefineBAGRefreshWithLoadView.updateLoadingMoreText("自定义加载更多");
         mDefineBAGRefreshWithLoadView.showLoadingMoreImg();
-        ALLSUM = 0;
+        page = 0;
         handler.sendEmptyMessage(0);
     }
 
@@ -213,7 +207,7 @@ public class DefineLoadWithRefreshActivity extends BaseActivity implements BGARe
      */
     @Override
     public boolean onBGARefreshLayoutBeginLoadingMore(BGARefreshLayout refreshLayout) {
-        if (ALLSUM == 2) {
+        if (page == totalpage) {
             /** 设置文字 **/
             mDefineBAGRefreshWithLoadView.updateLoadingMoreText("没有更多数据");
             /** 隐藏图片 **/
@@ -221,7 +215,7 @@ public class DefineLoadWithRefreshActivity extends BaseActivity implements BGARe
             handler.sendEmptyMessage(2);
             return true;
         }
-        ALLSUM++;
+        page++;
         handler.sendEmptyMessage(1);
         return true;
     }

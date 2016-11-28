@@ -22,9 +22,16 @@
       android:text="跳转到下拉刷新上拉加载页面"/>
 
   <Button
+      android:id="@+id/btn_nomal_recyclerView"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:layout_below="@id/btn_reflash"
       android:onClick="toRecyclerView"
-      android:text="跳转到普通页面"/>
+      android:text="跳转到有广告头的普通页面"/>
+  <Button
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_below="@id/btn_nomal_recyclerView"
+      android:onClick="toBananerReflash"
+      android:text="跳转到有广告头的刷新页面"/>
 </RelativeLayout>
