@@ -1,0 +1,5 @@
+<resources>
+  <string name="app_name">EndDialog</string>
+
+  <string name="net_unavailable">世界上最遥远的距离就是没网，检查设置</string>
+</resources>
