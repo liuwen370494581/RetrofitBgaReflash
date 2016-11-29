@@ -20,6 +20,7 @@ import java.util.List;
 
 import cn.bingoogolapple.androidcommon.adapter.BGAOnItemChildClickListener;
 import cn.bingoogolapple.androidcommon.adapter.BGAOnRVItemClickListener;
+import cn.bingoogolapple.androidcommon.adapter.BGAOnRVItemLongClickListener;
 import cn.bingoogolapple.androidcommon.adapter.BGARecyclerViewAdapter;
 import cn.bingoogolapple.androidcommon.adapter.BGAViewHolderHelper;
 import cn.bingoogolapple.bgabanner.BGABanner;
@@ -40,7 +41,6 @@ public class NormalRecyclerActivity extends BaseActivity {
         initView();
         initBananer();
         getDateFromService();
-
     }
 
     /**
@@ -70,6 +70,12 @@ public class NormalRecyclerActivity extends BaseActivity {
             @Override
             public void onRVItemClick(ViewGroup parent, View itemView, int position) {
                 Toast.makeText(NormalRecyclerActivity.this, "点击了第" + (position + 1) + "页", Toast.LENGTH_SHORT).show();
+            }
+        });
+        mContentAdapter.setOnRVItemLongClickListener(new BGAOnRVItemLongClickListener() {
+            @Override
+            public boolean onRVItemLongClick(ViewGroup parent, View itemView, int position) {
+                return true;
             }
         });
     }

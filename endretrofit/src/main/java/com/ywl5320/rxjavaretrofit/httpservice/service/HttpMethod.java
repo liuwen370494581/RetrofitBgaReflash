@@ -1,6 +1,7 @@
 package com.ywl5320.rxjavaretrofit.httpservice.service;
 
 
+import android.util.Log;
 
 import com.ywl5320.rxjavaretrofit.MyApplication;
 import com.ywl5320.rxjavaretrofit.utils.NetUtil;
@@ -24,20 +25,20 @@ import retrofit2.converter.gson.GsonConverterFactory;
  */
 public class HttpMethod {
 
-     //http://www.kuaidi100.com/query?type=zhongtong&postid=418271182599
+    //http://www.kuaidi100.com/query?type=zhongtong&postid=418271182599
     public static final String BASE_URL = "http://www.kuaidi100.com/";
     public static String token = "";//请求时用户的Token
     private static Retrofit retrofit;
+
     //构造方法私有
     private HttpMethod() {
         retrofit = new Retrofit.Builder()
-                .client(genericClient())
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                 .baseUrl(BASE_URL)
+                .client(genericClient())
                 .build();
     }
-
 
     public static <T> T createApi(Class<T> clazz) {
 
@@ -46,24 +47,30 @@ public class HttpMethod {
 
 
     //在访问HttpMethods时创建单例
-    private static class SingletonHolder{
+    private static class SingletonHolder {
         private static final HttpMethod INSTANCE = new HttpMethod();
     }
 
     //获取单例
-    public static HttpMethod getInstance(){
+    public static HttpMethod getInstance() {
         return SingletonHolder.INSTANCE;
     }
 
 
     public static OkHttpClient genericClient() {
-        HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
+        HttpLoggingInterceptor logging = new HttpLoggingInterceptor(new HttpLoggingInterceptor.Logger() {
+            @Override
+            public void log(String message) {
+                Log.i("MainActivity", "okhttp====" + message);
+            }
+        });
         // set your desired log level
         logging.setLevel(HttpLoggingInterceptor.Level.BODY);
         //设置缓存路径
         File httpCacheDirectory = new File(MyApplication.getInstance().getExternalCacheDir().getAbsolutePath(), "responses");
         //设置缓存 10M
         Cache cache = new Cache(httpCacheDirectory, 50 * 1024 * 1024);
+
         OkHttpClient httpClient = new OkHttpClient.Builder()
                 .addInterceptor(new Interceptor() {
                     @Override
@@ -96,12 +103,9 @@ public class HttpMethod {
                         return response;
                     }
 
-                }).
-                        addInterceptor(logging).
-                        cache(cache)
-                .build();
-
+                }).addInterceptor(logging).cache(cache).build();
         return httpClient;
     }
+
 
 }
