@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/MatchMatch"
+    android:scrollbars="none">
+
+    <LinearLayout style="@style/MatchWrap.Vertical">
+
+        <TextView
+            android:id="@+id/tv_main_listview_demo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/selector_btn_test"
+            android:clickable="true"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:padding="10dp"
+            android:text="查看 ListView HeaderView Demo"
+            android:textColor="@android:color/white"
+            android:textSize="14dp" />
+
+        <TextView
+            android:id="@+id/tv_main_recyclerview_demo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/selector_btn_test"
+            android:clickable="true"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:padding="10dp"
+            android:text="查看 RecyclerView HeaderView Demo"
+            android:textColor="@android:color/white"
+            android:textSize="14dp" />
+
+        <LinearLayout style="@style/MatchWrap.Horizontal">
+
+            <TextView
+                android:id="@+id/tv_main_get_item_count"
+                style="@style/AutoWrapTv"
+                android:text="总页数" />
+
+            <TextView
+                android:id="@+id/tv_main_get_current_item"
+                style="@style/AutoWrapTv"
+                android:text="当前索引" />
+
+            <TextView
+                android:id="@+id/tv_main_load_one_item"
+                style="@style/AutoWrapTv"
+                android:text="加载1页" />
+
+            <TextView
+                android:id="@+id/tv_main_load_two_item"
+                style="@style/AutoWrapTv"
+                android:text="加载2页" />
+
+            <TextView
+                android:id="@+id/tv_main_load_three_item"
+                style="@style/AutoWrapTv"
+                android:text="加载3页" />
+
+            <TextView
+                android:id="@+id/tv_main_load_five_item"
+                style="@style/AutoWrapTv"
+                android:text="加载5页" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/MatchWrap.Horizontal">
+
+            <TextView
+                android:id="@+id/tv_main_select_page_one"
+                style="@style/AutoWrapTv"
+                android:text="选择第1页" />
+
+            <TextView
+                android:id="@+id/tv_main_select_page_two"
+                style="@style/AutoWrapTv"
+                android:text="选择第2页" />
+
+            <TextView
+                android:id="@+id/tv_main_select_page_three"
+                style="@style/AutoWrapTv"
+                android:text="选择第3页" />
+
+            <TextView
+                android:id="@+id/tv_main_select_page_four"
+                style="@style/AutoWrapTv"
+                android:text="选择第4页" />
+
+            <TextView
+                android:id="@+id/tv_main_select_page_five"
+                style="@style/AutoWrapTv"
+                android:text="选择第5页" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/MatchWrap.Horizontal">
+
+            <TextView
+                android:id="@+id/tv_main_cube"
+                style="@style/AutoWrapTv"
+                android:text="Cube" />
+
+            <TextView
+                android:id="@+id/tv_main_depth"
+                style="@style/AutoWrapTv"
+                android:text="Depth" />
+
+            <TextView
+                android:id="@+id/tv_main_flip"
+                style="@style/AutoWrapTv"
+                android:text="Flip" />
+
+            <TextView
+                android:id="@+id/tv_main_rotate"
+                style="@style/AutoWrapTv"
+                android:text="Rotate" />
+
+            <TextView
+                android:id="@+id/tv_main_alpha"
+                style="@style/AutoWrapTv"
+                android:text="Alpha等" />
+        </LinearLayout>
+
+        <cn.bingoogolapple.bgabanner.BGABanner
+            android:id="@+id/banner_main_default"
+            style="@style/BannerDefaultStyle"
+            app:banner_indicatorGravity="bottom|right"
+            app:banner_isNeedShowIndicatorOnOnlyOnePage="true"
+            app:banner_isNumberIndicator="true"
+            app:banner_numberIndicatorBackground="@drawable/shape_number_indicator_background"
+            app:banner_numberIndicatorTextColor="@android:color/white"
+            app:banner_numberIndicatorTextSize="10sp"
+            app:banner_pointContainerBackground="@android:color/transparent"
+            app:banner_transitionEffect="defaultEffect" />
+
+        <cn.bingoogolapple.bgabanner.BGABanner
+            android:id="@+id/banner_main_cube"
+            style="@style/BannerDefaultStyle"
+            app:banner_indicatorGravity="bottom|right"
+            app:banner_isNumberIndicator="true"
+            app:banner_numberIndicatorTextColor="@android:color/white"
+            app:banner_numberIndicatorTextSize="10sp"
+            app:banner_transitionEffect="cube" />
+
+        <cn.bingoogolapple.bgabanner.BGABanner
+            android:id="@+id/banner_main_accordion"
+            style="@style/BannerDefaultStyle"
+            app:banner_pointDrawable="@drawable/bga_banner_selector_point_hollow"
+            app:banner_transitionEffect="accordion" />
+
+        <cn.bingoogolapple.bgabanner.BGABanner
+            android:id="@+id/banner_main_flip"
+            style="@style/BannerDefaultStyle"
+            app:banner_indicatorGravity="bottom|left"
+            app:banner_pointDrawable="@drawable/bga_banner_selector_point_solid"
+            app:banner_transitionEffect="flip" />
+
+        <cn.bingoogolapple.bgabanner.BGABanner
+            android:id="@+id/banner_main_rotate"
+            style="@style/BannerDefaultStyle"
+            app:banner_pointDrawable="@drawable/selector_banner_point"
+            app:banner_transitionEffect="rotate" />
+
+        <cn.bingoogolapple.bgabanner.BGABanner
+            android:id="@+id/banner_main_alpha"
+            style="@style/BannerDefaultStyle"
+            app:banner_indicatorGravity="bottom|right"
+            app:banner_transitionEffect="alpha" />
+
+        <cn.bingoogolapple.bgabanner.BGABanner
+            android:id="@+id/banner_main_zoomFade"
+            style="@style/BannerDefaultStyle"
+            app:banner_transitionEffect="zoomFade" />
+
+        <cn.bingoogolapple.bgabanner.BGABanner
+            android:id="@+id/banner_main_fade"
+            style="@style/BannerDefaultStyle"
+            app:banner_transitionEffect="fade" />
+
+        <cn.bingoogolapple.bgabanner.BGABanner
+            android:id="@+id/banner_main_zoomCenter"
+            style="@style/BannerDefaultStyle"
+            app:banner_pointDrawable="@drawable/selector_banner_point"
+            app:banner_transitionEffect="zoomCenter" />
+
+        <cn.bingoogolapple.bgabanner.BGABanner
+            android:id="@+id/banner_main_zoom"
+            style="@style/BannerDefaultStyle"
+            app:banner_transitionEffect="zoom" />
+
+        <cn.bingoogolapple.bgabanner.BGABanner
+            android:id="@+id/banner_main_stack"
+            style="@style/BannerDefaultStyle"
+            app:banner_indicatorGravity="bottom|right"
+            app:banner_transitionEffect="stack" />
+
+        <cn.bingoogolapple.bgabanner.BGABanner
+            android:id="@+id/banner_main_zoomStack"
+            style="@style/BannerDefaultStyle"
+            app:banner_indicatorGravity="bottom|left"
+            app:banner_transitionEffect="zoomStack" />
+
+        <cn.bingoogolapple.bgabanner.BGABanner
+            android:id="@+id/banner_main_depth"
+            style="@style/BannerDefaultStyle"
+            app:banner_transitionEffect="depth" />
+    </LinearLayout>
+</ScrollView>
