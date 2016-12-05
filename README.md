@@ -26,5 +26,7 @@ private void getDateFromService() {
             }
         }, DefineLoadWithRefreshActivity.this));
     }
-    #endbgabananer 这个文件集成了各种广告头
+    
+     # endbgabananer 这个文件集成了极光推送  endjpush 这个文件集成了极光推送。
+    
     
