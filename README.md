@@ -26,4 +26,5 @@ private void getDateFromService() {
             }
         }, DefineLoadWithRefreshActivity.this));
     }
-
+    #endbgabananer 这个文件集成了各种广告头
+    
