@@ -1,4 +1,4 @@
-# RetrofitBgaReflash
+# RetrofitBgaReflash   endJpush 
 这个项目使用了Retrofit和Rxjava访问网络和BGAreflash下拉刷新和上拉加载
 
 已经是完全封装好的 直接可以使用即可的
@@ -26,7 +26,6 @@ private void getDateFromService() {
             }
         }, DefineLoadWithRefreshActivity.this));
     }
-    
-     # endbgabananer 这个文件集成了极光推送  endjpush 这个文件集成了极光推送。
+   
     
     
