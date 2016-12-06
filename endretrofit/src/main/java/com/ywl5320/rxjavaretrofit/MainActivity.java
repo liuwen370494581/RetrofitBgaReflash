@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
 
                     @Override
                     public void onError(int code, String msg) {
-                        Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainActivity.this, "获取内容失败", Toast.LENGTH_SHORT).show();
                         hideLoadDialog();
 
                     }

@@ -95,7 +95,7 @@ public class DefineLoadWithRefreshActivity extends BaseActivity implements BGARe
             @Override
             public void onError(int code, String msg) {
                 hideLoadDialog();
-                Toast.makeText(DefineLoadWithRefreshActivity.this, msg, Toast.LENGTH_SHORT).show();
+                Toast.makeText(DefineLoadWithRefreshActivity.this, "获取数据失败", Toast.LENGTH_SHORT).show();
             }
         }, DefineLoadWithRefreshActivity.this));
     }

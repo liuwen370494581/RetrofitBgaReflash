@@ -91,7 +91,7 @@ public class NormalRecyclerActivity extends BaseActivity {
 
             @Override
             public void onError(int code, String msg) {
-                Toast.makeText(NormalRecyclerActivity.this, msg, Toast.LENGTH_SHORT).show();
+                Toast.makeText(NormalRecyclerActivity.this, "获取数据失败", Toast.LENGTH_SHORT).show();
             }
         }, NormalRecyclerActivity.this));
     }

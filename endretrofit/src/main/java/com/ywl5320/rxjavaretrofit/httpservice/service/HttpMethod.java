@@ -8,6 +8,7 @@ import com.ywl5320.rxjavaretrofit.utils.NetUtil;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 import okhttp3.Cache;
 import okhttp3.CacheControl;
@@ -24,7 +25,6 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * Created by ywl on 2016/5/19.
  */
 public class HttpMethod {
-
     //http://www.kuaidi100.com/query?type=zhongtong&postid=418271182599
     public static final String BASE_URL = "http://www.kuaidi100.com/";
     public static String token = "";//请求时用户的Token
@@ -33,10 +33,10 @@ public class HttpMethod {
     //构造方法私有
     private HttpMethod() {
         retrofit = new Retrofit.Builder()
+                .client(genericClient())
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                 .baseUrl(BASE_URL)
-                .client(genericClient())
                 .build();
     }
 
@@ -94,7 +94,7 @@ public class HttpMethod {
                                     .removeHeader("Pragma")// 清除头信息，因为服务器如果不支持，会返回一些干扰信息，不清除下面无法生效
                                     .build();
                         } else {
-                            int maxStale = 60 * 60 * 24 * 7; // 无网络时，设置超时为1周
+                            int maxStale = 60 * 60 * 24 * 28; // 无网络时，设置超时为4周
                             response.newBuilder()
                                     .addHeader("Cache-Control", "public, only-if-cached, max-stale=" + maxStale)
                                     .removeHeader("Pragma")
@@ -103,9 +103,12 @@ public class HttpMethod {
                         return response;
                     }
 
-                }).addInterceptor(logging).cache(cache).build();
+                }).addInterceptor(logging)
+                .cache(cache) //绑定缓存
+                .connectTimeout(10, TimeUnit.SECONDS) //连接超时
+                .readTimeout(10, TimeUnit.SECONDS) //读写超时
+                .writeTimeout(10, TimeUnit.SECONDS).build();//写入超时
         return httpClient;
     }
-
 
 }

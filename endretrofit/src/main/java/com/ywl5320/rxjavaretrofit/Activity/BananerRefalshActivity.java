@@ -23,6 +23,7 @@ import com.ywl5320.rxjavaretrofit.httpservice.serviceapi.UserApi;
 import com.ywl5320.rxjavaretrofit.httpservice.subscribers.HttpSubscriber;
 import com.ywl5320.rxjavaretrofit.httpservice.subscribers.SubscriberOnListener;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import cn.bingoogolapple.androidcommon.adapter.BGAOnRVItemClickListener;
@@ -46,7 +47,7 @@ public class BananerRefalshActivity extends BaseActivity implements BGARefreshLa
     private DefineBAGRefreshWithLoadView mDefineBAGRefreshWithLoadView = null;
     public LoadDialog loadDialog;
     private int page = 0;// 表示第一页 模拟
-    private int totalPage = 2;// 表示下拉刷新的总页面是3
+    private int totalPage = 3;// 表示下拉刷新的总页面是3
 
 
     @Override
@@ -124,45 +125,10 @@ public class BananerRefalshActivity extends BaseActivity implements BGARefreshLa
 
             @Override
             public void onError(int code, String msg) {
-                Toast.makeText(BananerRefalshActivity.this, msg, Toast.LENGTH_SHORT).show();
+                Toast.makeText(BananerRefalshActivity.this, "获取内容失败", Toast.LENGTH_SHORT).show();
                 hideLoadDialog();
             }
         }, BananerRefalshActivity.this));
-    }
-
-
-    /**
-     * 模拟请求网络数据
-     */
-    private Handler handler = new Handler() {
-        @Override
-        public void handleMessage(Message msg) {
-            super.handleMessage(msg);
-            switch (msg.what) {
-                case 0:
-                    mContentAdapter.clear();
-                    setData();
-                    mBGARefreshLayout.endRefreshing();
-                    break;
-                case 1:
-                    setData();
-                    mBGARefreshLayout.endLoadingMore();
-                    break;
-                case 2:
-                    mBGARefreshLayout.endLoadingMore();
-                    break;
-                default:
-                    break;
-
-            }
-        }
-    };
-
-    private void setData() {
-        getDateFromService();
-        if (page > 0) {
-            mContentAdapter.notifyDataSetChanged();
-        }
     }
 
 
@@ -171,23 +137,32 @@ public class BananerRefalshActivity extends BaseActivity implements BGARefreshLa
         mDefineBAGRefreshWithLoadView.updateLoadingMoreText("物流信息获取中");
         mDefineBAGRefreshWithLoadView.showLoadingMoreImg();
         page = 0;
-        handler.sendEmptyMessage(0);
+        mContentAdapter.clear();
+        getDateFromService();
+        mBGARefreshLayout.endRefreshing();
 
     }
 
     @Override
     public boolean onBGARefreshLayoutBeginLoadingMore(BGARefreshLayout refreshLayout) {
-        if (page == totalPage) {
-            /** 设置文字 **/
-            mDefineBAGRefreshWithLoadView.updateLoadingMoreText("没有更多数据");
-            /** 隐藏图片 **/
-            mDefineBAGRefreshWithLoadView.hideLoadingMoreImg();
-
-            handler.sendEmptyMessage(2);
-            return true;
-        }
         page++;
-        handler.sendEmptyMessage(1);
+        if (page > totalPage) {
+            mBGARefreshLayout.endLoadingMore();
+            Toast.makeText(this, "没有更多数据了", Toast.LENGTH_LONG).show();
+            return false;
+        }
+        UserApi.getInstance().getKuaidInfo("zhongtong", "418271182599", new HttpSubscriber<wuLiuInfo>(new SubscriberOnListener() {
+            @Override
+            public void onSucceed(Object data) {
+                mBGARefreshLayout.endLoadingMore();
+                mContentAdapter.addMoreData((List<wuLiuInfo>) data);
+            }
+
+            @Override
+            public void onError(int code, String msg) {
+                mBGARefreshLayout.endLoadingMore();
+            }
+        }, this));
         return true;
     }
 

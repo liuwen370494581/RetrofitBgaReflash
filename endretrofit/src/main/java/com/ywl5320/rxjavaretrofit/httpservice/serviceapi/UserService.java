@@ -7,6 +7,7 @@ import com.ywl5320.rxjavaretrofit.httpservice.httpentity.HttpResult;
 import com.ywl5320.rxjavaretrofit.httpservice.httpentity.HttppJIeGuo;
 
 
+import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.Query;
 import rx.Observable;
@@ -29,7 +30,7 @@ public interface UserService {
 
 
     //http://www.kuaidi100.com/query?type=zhongtong&postid=418271182599
-    @POST("query")
+    @GET("query")
     Observable<HttppJIeGuo<wuLiuInfo>> getKuaidiInfo(@Query("type") String type, @Query("postid") String postid);
 
 }
