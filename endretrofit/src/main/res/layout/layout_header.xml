@@ -3,6 +3,7 @@
               xmlns:app="http://schemas.android.com/apk/res-auto"
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
+              xmlns:tools="http://schemas.android.com/tools"
               android:orientation="vertical">
 
   <cn.bingoogolapple.bgabanner.BGABanner
@@ -13,4 +14,89 @@
       app:banner_placeholderDrawable="@mipmap/holder"
       app:banner_tipTextSize="12sp"
       app:banner_transitionEffect="accordion"/>
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="6dp"
+      android:orientation="horizontal">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/item_selector"
+        android:padding="3dp"
+        android:text="查询"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/item_selector"
+        android:padding="3dp"
+        android:text="订票"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/item_selector"
+        android:padding="3dp"
+        android:text="商演"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/item_selector"
+        android:padding="3dp"
+        android:text="影院"/>
+  </LinearLayout>
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="6dp"
+      android:orientation="horizontal">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/item_selector"
+        android:padding="3dp"
+        android:text="洗衣"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/item_selector"
+        android:padding="3dp"
+        android:text="签到"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/item_selector"
+        android:padding="3dp"
+        android:text="领卷"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/item_selector"
+        android:padding="3dp"
+        android:text="到店付"/>
+  </LinearLayout>
+
+  <android.support.v7.widget.RecyclerView
+      android:id="@+id/banner_recyclerview"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      >
+  </android.support.v7.widget.RecyclerView>
 </LinearLayout>

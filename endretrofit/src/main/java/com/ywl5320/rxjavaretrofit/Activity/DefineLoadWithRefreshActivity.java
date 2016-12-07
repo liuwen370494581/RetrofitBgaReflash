@@ -19,6 +19,7 @@ import com.ywl5320.rxjavaretrofit.httpservice.beans.wuLiuInfo;
 import com.ywl5320.rxjavaretrofit.httpservice.serviceapi.UserApi;
 import com.ywl5320.rxjavaretrofit.httpservice.subscribers.HttpSubscriber;
 import com.ywl5320.rxjavaretrofit.httpservice.subscribers.SubscriberOnListener;
+import com.ywl5320.rxjavaretrofit.utils.ToastUtils;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -95,7 +96,7 @@ public class DefineLoadWithRefreshActivity extends BaseActivity implements BGARe
             @Override
             public void onError(int code, String msg) {
                 hideLoadDialog();
-                Toast.makeText(DefineLoadWithRefreshActivity.this, "获取数据失败", Toast.LENGTH_SHORT).show();
+                ToastUtils.showToast(DefineLoadWithRefreshActivity.this, "获取数据失败");
             }
         }, DefineLoadWithRefreshActivity.this));
     }
@@ -128,12 +129,12 @@ public class DefineLoadWithRefreshActivity extends BaseActivity implements BGARe
         mRecyclerViewAdapter.setOnItemClickListener(new RecyclerViewAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View v, int position) {
-                Toast.makeText(mContext, "onclick  " + position, Toast.LENGTH_SHORT).show();
+                ToastUtils.showToast(mContext, "onclick  " + position);
             }
 
             @Override
             public void onItemLongClick(View v, int position) {
-                Toast.makeText(mContext, "onlongclick  " + position, Toast.LENGTH_SHORT).show();
+                ToastUtils.showToast(mContext, "onlongclick  " + position);
             }
         });
     }

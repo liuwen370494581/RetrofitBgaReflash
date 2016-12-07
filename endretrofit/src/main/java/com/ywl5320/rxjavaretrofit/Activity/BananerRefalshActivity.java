@@ -22,6 +22,8 @@ import com.ywl5320.rxjavaretrofit.httpservice.beans.wuLiuInfo;
 import com.ywl5320.rxjavaretrofit.httpservice.serviceapi.UserApi;
 import com.ywl5320.rxjavaretrofit.httpservice.subscribers.HttpSubscriber;
 import com.ywl5320.rxjavaretrofit.httpservice.subscribers.SubscriberOnListener;
+import com.ywl5320.rxjavaretrofit.pjo.BannerModel;
+import com.ywl5320.rxjavaretrofit.utils.ToastUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,7 +40,7 @@ import cn.bingoogolapple.refreshlayout.BGARefreshLayout;
 public class BananerRefalshActivity extends BaseActivity implements BGARefreshLayout.BGARefreshLayoutDelegate {
 
     private BGARefreshLayout mBGARefreshLayout;//刷新控件
-    private RecyclerView mRecyclerView;
+    private RecyclerView mRecyclerView, mBannerRecycler;
     private BGABanner mBanner;//广告头
     private ContentAdapter mContentAdapter;//适配器
     private Context mContext;
@@ -57,8 +59,26 @@ public class BananerRefalshActivity extends BaseActivity implements BGARefreshLa
         mContext = this;
         initView();
         setBgaRefreshLayout();
+
         initBananer();
         getDateFromService();
+        LoadBananerData();
+    }
+
+    private void LoadBananerData() {
+        UserApi.getInstance().fetchItemsWithItemCount("http://7xk9dj.com1.z0.glb.clouddn.com/banner/api/5item.json", new HttpSubscriber<BannerModel>(new SubscriberOnListener() {
+            @Override
+            public void onSucceed(Object data) {
+                BannerModel bannerModel = (BannerModel) data;
+                mBanner.setData(bannerModel.imgs, bannerModel.tips);
+
+            }
+
+            @Override
+            public void onError(int code, String msg) {
+
+            }
+        }, BananerRefalshActivity.this));
     }
 
     private void initView() {
@@ -77,6 +97,9 @@ public class BananerRefalshActivity extends BaseActivity implements BGARefreshLa
         mContentAdapter = new ContentAdapter(mRecyclerView);
         View headerView = View.inflate(BananerRefalshActivity.this, R.layout.layout_header, null);
         mBanner = (BGABanner) headerView.findViewById(R.id.banner);
+        mBannerRecycler = (RecyclerView) headerView.findViewById(R.id.banner_recyclerview);
+
+
         mBanner.setAdapter(new BGABanner.Adapter() {
             @Override
             public void fillBannerItem(BGABanner banner, View view, Object model, int position) {
@@ -86,7 +109,7 @@ public class BananerRefalshActivity extends BaseActivity implements BGARefreshLa
         mBanner.setOnItemClickListener(new BGABanner.OnItemClickListener() {
             @Override
             public void onBannerItemClick(BGABanner banner, View view, Object model, int position) {
-                Toast.makeText(mContext, "点击了第" + (position + 1) + "页", Toast.LENGTH_SHORT).show();
+                ToastUtils.showToast(mContext, "点击了第" + (position + 1) + "页");
             }
         });
 
@@ -96,7 +119,7 @@ public class BananerRefalshActivity extends BaseActivity implements BGARefreshLa
         mContentAdapter.setOnRVItemClickListener(new BGAOnRVItemClickListener() {
             @Override
             public void onRVItemClick(ViewGroup parent, View itemView, int position) {
-                Toast.makeText(mContext, "点击了第" + (position + 1) + "页", Toast.LENGTH_SHORT).show();
+                ToastUtils.showToast(mContext, "点击了第" + (position + 1) + "页");
             }
         });
 
@@ -120,12 +143,11 @@ public class BananerRefalshActivity extends BaseActivity implements BGARefreshLa
                 mContentAdapter.setData((List<wuLiuInfo>) data);
                 mContentAdapter.notifyDataSetChanged();
                 hideLoadDialog();
-                // Toast.makeText(NormalRecyclerActivity.this, mDataList.toString(), Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onError(int code, String msg) {
-                Toast.makeText(BananerRefalshActivity.this, "获取内容失败", Toast.LENGTH_SHORT).show();
+                ToastUtils.showToast(BananerRefalshActivity.this, "获取内容失败");
                 hideLoadDialog();
             }
         }, BananerRefalshActivity.this));
@@ -148,7 +170,7 @@ public class BananerRefalshActivity extends BaseActivity implements BGARefreshLa
         page++;
         if (page > totalPage) {
             mBGARefreshLayout.endLoadingMore();
-            Toast.makeText(this, "没有更多数据了", Toast.LENGTH_LONG).show();
+            ToastUtils.showToast(this,"没有更多数据了");
             return false;
         }
         UserApi.getInstance().getKuaidInfo("zhongtong", "418271182599", new HttpSubscriber<wuLiuInfo>(new SubscriberOnListener() {

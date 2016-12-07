@@ -5,11 +5,14 @@ import com.ywl5320.rxjavaretrofit.httpservice.beans.WeatherBean;
 import com.ywl5320.rxjavaretrofit.httpservice.beans.wuLiuInfo;
 import com.ywl5320.rxjavaretrofit.httpservice.httpentity.HttpResult;
 import com.ywl5320.rxjavaretrofit.httpservice.httpentity.HttppJIeGuo;
+import com.ywl5320.rxjavaretrofit.pjo.BannerModel;
 
 
+import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.Query;
+import retrofit2.http.Url;
 import rx.Observable;
 
 /**
@@ -33,4 +36,7 @@ public interface UserService {
     @GET("query")
     Observable<HttppJIeGuo<wuLiuInfo>> getKuaidiInfo(@Query("type") String type, @Query("postid") String postid);
 
+
+    @GET
+    Observable<BannerModel> fetchItemsWithItemCount(@Url String url);
 }

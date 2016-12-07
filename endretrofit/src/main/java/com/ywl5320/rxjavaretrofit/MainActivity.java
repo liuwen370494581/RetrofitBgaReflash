@@ -17,6 +17,7 @@ import com.ywl5320.rxjavaretrofit.httpservice.beans.wuLiuInfo;
 import com.ywl5320.rxjavaretrofit.httpservice.serviceapi.UserApi;
 import com.ywl5320.rxjavaretrofit.httpservice.subscribers.HttpSubscriber;
 import com.ywl5320.rxjavaretrofit.httpservice.subscribers.SubscriberOnListener;
+import com.ywl5320.rxjavaretrofit.utils.ToastUtils;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -40,12 +41,12 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onSucceed(Object data) {
                         hideLoadDialog();
-                        Toast.makeText(MainActivity.this, data.toString(), Toast.LENGTH_SHORT).show();
+                        ToastUtils.showToast(MainActivity.this, data.toString());
                     }
 
                     @Override
                     public void onError(int code, String msg) {
-                        Toast.makeText(MainActivity.this, "获取内容失败", Toast.LENGTH_SHORT).show();
+                        ToastUtils.showToast(MainActivity.this, "获取内容失败");
                         hideLoadDialog();
 
                     }

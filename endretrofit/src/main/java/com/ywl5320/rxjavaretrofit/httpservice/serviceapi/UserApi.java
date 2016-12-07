@@ -6,6 +6,7 @@ import com.ywl5320.rxjavaretrofit.httpservice.beans.WeatherBean;
 import com.ywl5320.rxjavaretrofit.httpservice.beans.wuLiuInfo;
 import com.ywl5320.rxjavaretrofit.httpservice.service.BaseApi;
 import com.ywl5320.rxjavaretrofit.httpservice.service.HttpMethod;
+import com.ywl5320.rxjavaretrofit.pjo.BannerModel;
 
 import rx.Observable;
 import rx.Subscriber;
@@ -44,6 +45,12 @@ public class UserApi extends BaseApi {
         Observable observable = userService.getKuaidiInfo(type, postid)
                 .map(new HttpResultFunc<wuLiuInfo>());
 
+        toSubscribe(observable, subscriber);
+    }
+
+    public void fetchItemsWithItemCount(String url, Subscriber<BannerModel> subscriber) {
+        Observable observable = userService.fetchItemsWithItemCount(url)
+                .map(new HttpResultFunc());
         toSubscribe(observable, subscriber);
     }
 

@@ -15,6 +15,7 @@ import com.ywl5320.rxjavaretrofit.httpservice.beans.wuLiuInfo;
 import com.ywl5320.rxjavaretrofit.httpservice.serviceapi.UserApi;
 import com.ywl5320.rxjavaretrofit.httpservice.subscribers.HttpSubscriber;
 import com.ywl5320.rxjavaretrofit.httpservice.subscribers.SubscriberOnListener;
+import com.ywl5320.rxjavaretrofit.utils.ToastUtils;
 
 import java.util.List;
 
@@ -59,7 +60,7 @@ public class NormalRecyclerActivity extends BaseActivity {
         mBanner.setOnItemClickListener(new BGABanner.OnItemClickListener() {
             @Override
             public void onBannerItemClick(BGABanner banner, View view, Object model, int position) {
-                Toast.makeText(NormalRecyclerActivity.this, "点击了第" + (position + 1) + "页", Toast.LENGTH_SHORT).show();
+                ToastUtils.showToast(NormalRecyclerActivity.this, "点击了第" + (position + 1) + "页");
             }
         });
 
@@ -69,7 +70,7 @@ public class NormalRecyclerActivity extends BaseActivity {
         mContentAdapter.setOnRVItemClickListener(new BGAOnRVItemClickListener() {
             @Override
             public void onRVItemClick(ViewGroup parent, View itemView, int position) {
-                Toast.makeText(NormalRecyclerActivity.this, "点击了第" + (position + 1) + "页", Toast.LENGTH_SHORT).show();
+                ToastUtils.showToast(NormalRecyclerActivity.this, "点击了第" + (position + 1) + "页");
             }
         });
         mContentAdapter.setOnRVItemLongClickListener(new BGAOnRVItemLongClickListener() {
@@ -86,12 +87,11 @@ public class NormalRecyclerActivity extends BaseActivity {
             public void onSucceed(Object data) {
                 mContentAdapter.setData((List<wuLiuInfo>) data);
                 mContentAdapter.notifyDataSetChanged();
-                // Toast.makeText(NormalRecyclerActivity.this, mDataList.toString(), Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onError(int code, String msg) {
-                Toast.makeText(NormalRecyclerActivity.this, "获取数据失败", Toast.LENGTH_SHORT).show();
+                ToastUtils.showToast(NormalRecyclerActivity.this, "获取内容失败");
             }
         }, NormalRecyclerActivity.this));
     }
