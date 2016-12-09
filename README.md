@@ -3,30 +3,25 @@
 
 * 2. 已经是完全封装好的 直接可以使用即可的
 
-
-
-
-
 * 3代码调用
 * private void getDateFromService() {
-          showLoadDialog("请稍等");
-           UserApi.getInstance().getKuaidInfo("zhongtong", "418271182599", new HttpSubscriber<wuLiuInfo>(new SubscriberOnListener() {
-            @Override
-            public void onSucceed(Object data) {
-                mListData.addAll((Collection<? extends wuLiuInfo>) data);
-                mRecyclerViewAdapter.notifyDataSetChanged();
-                hideLoadDialog();
-                // Toast.makeText(NormalRecyclerActivity.this, mDataList.toString(), Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onError(int code, String msg) {
-                hideLoadDialog();
-                Toast.makeText(DefineLoadWithRefreshActivity.this, msg, Toast.LENGTH_SHORT).show();
-            }
-        }, DefineLoadWithRefreshActivity.this));
-    }
-   
+          showLoadDialog("请稍等");
+           UserApi.getInstance().getKuaidInfo("zhongtong", "418271182599", new HttpSubscriber<wuLiuInfo>(new SubscriberOnListener() {
+            @Override
+            public void onSucceed(Object data) {
+                mListData.addAll((Collection<? extends wuLiuInfo>) data);
+                mRecyclerViewAdapter.notifyDataSetChanged();
+                hideLoadDialog();
+                // Toast.makeText(NormalRecyclerActivity.this, mDataList.toString(), Toast.LENGTH_SHORT).show();
+            }
+            @Override
+            public void onError(int code, String msg) {
+                hideLoadDialog();
+                Toast.makeText(DefineLoadWithRefreshActivity.this, msg, Toast.LENGTH_SHORT).show();
+            }
+        }, DefineLoadWithRefreshActivity.this));
+    }
+   
     
     
     
@@ -42,12 +37,12 @@
 
 * 2、在基类中加上回调方法
 
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[]
-            grantResults) {
-        XPermissionUtils.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-    }
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[]
+            grantResults) {
+        XPermissionUtils.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+    }
 * 3、调用方法
 
 * XPermissionUtils.requestPermissions(Context context, int requestCode, String[] permissions, OnPermissionListener listener)
@@ -61,21 +56,20 @@
 
 * 等等.....
 
-    private void doCallPhone() {
-        XPermissionUtils.requestPermissions(this, 1, new String[]{Manifest.permission
-                .CALL_PHONE}, new XPermissionUtils.OnPermissionListener() {
-            @Override
-            public void onPermissionGranted() {
-                Intent intent = new Intent();
-                intent.setAction(Intent.ACTION_CALL);
-                intent.setData(Uri.parse("tel:10010"));
-                startActivity(intent);
-            }
-
-            @Override
-            public void onPermissionDenied() {
-                //弹出权限被禁用的提示框
-            }
-        });
-    }
-    
+    private void doCallPhone() {
+        XPermissionUtils.requestPermissions(this, 1, new String[]{Manifest.permission
+                .CALL_PHONE}, new XPermissionUtils.OnPermissionListener() {
+            @Override
+            public void onPermissionGranted() {
+                Intent intent = new Intent();
+                intent.setAction(Intent.ACTION_CALL);
+                intent.setData(Uri.parse("tel:10010"));
+                startActivity(intent);
+            }
+            @Override
+            public void onPermissionDenied() {
+                //弹出权限被禁用的提示框
+            }
+        });
+    }
+    
