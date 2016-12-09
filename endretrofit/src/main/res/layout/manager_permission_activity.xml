@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:padding="2dp">
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:orientation="horizontal">
+
+    <Button
+        android:id="@+id/btn_phone_test"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/shape_red"
+        android:onClick="onClick"
+        android:text="电话权限测试"/>
+
+    <Button
+        android:id="@+id/btn_video_test"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/shape_red"
+        android:onClick="onClick"
+        android:text="录音权限测试"/>
+
+    <Button
+        android:id="@+id/btn_readWrite_test"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/shape_red"
+        android:onClick="onClick"
+        android:text="读写卡权限"/>
+
+    <Button
+        android:id="@+id/btn_address_test"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/shape_red"
+        android:onClick="onClick"
+        android:text="地理位置测试"/>
+  </LinearLayout>
+</LinearLayout>

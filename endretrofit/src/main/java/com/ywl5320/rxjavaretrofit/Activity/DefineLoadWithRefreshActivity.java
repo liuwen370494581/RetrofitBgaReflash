@@ -28,7 +28,7 @@ import java.util.List;
 import cn.bingoogolapple.refreshlayout.BGARefreshLayout;
 
 /**
- * Created by fml on 2015/12/4 0004.
+ * Created by liuwen on 2016/11/28.
  */
 public class DefineLoadWithRefreshActivity extends BaseActivity implements BGARefreshLayout.BGARefreshLayoutDelegate {
     private BGARefreshLayout mBGARefreshLayout;

@@ -22,7 +22,7 @@ import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
- * Created by ywl on 2016/5/19.
+ * Created by liuwen on 2016/10/23.
  */
 public class HttpMethod {
     //http://www.kuaidi100.com/query?type=zhongtong&postid=418271182599

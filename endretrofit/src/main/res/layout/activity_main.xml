@@ -3,21 +3,27 @@
                 xmlns:tools="http://schemas.android.com/tools"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
                 tools:context="com.ywl5320.rxjavaretrofit.MainActivity">
 
   <include layout="@layout/layout_netbar"/>
 
   <Button
+      android:layout_marginTop="3dp"
       android:id="@+id/btn_login"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
+      android:background="@drawable/shape_red"
       android:text="获取天气数据"/>
 
   <Button
+      android:layout_marginTop="3dp"
       android:id="@+id/btn_reflash"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:layout_below="@id/btn_login"
+      android:background="@drawable/shape_red"
       android:onClick="toReflash"
       android:text="跳转到下拉刷新上拉加载页面"/>
 
@@ -26,12 +32,36 @@
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:layout_below="@id/btn_reflash"
+      android:background="@drawable/shape_red"
       android:onClick="toRecyclerView"
       android:text="跳转到有广告头的普通页面"/>
+
   <Button
+      android:layout_marginTop="3dp"
+      android:id="@+id/btn_bananer_recyclerView"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:layout_below="@id/btn_nomal_recyclerView"
+      android:background="@drawable/shape_red"
       android:onClick="toBananerReflash"
       android:text="跳转到有广告头的刷新页面"/>
+
+  <Button
+      android:layout_marginTop="3dp"
+      android:id="@+id/btn_android_event"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_below="@id/btn_bananer_recyclerView"
+      android:background="@drawable/shape_red"
+      android:text="安卓事件的分发机制理解"/>
+
+  <Button
+      android:layout_marginTop="3dp"
+      android:id="@+id/btn_permission_test"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_below="@id/btn_android_event"
+      android:background="@drawable/shape_red"
+      android:onClick="toPermissionManager"
+      android:text="基于android6.0权限验证"/>
 </RelativeLayout>

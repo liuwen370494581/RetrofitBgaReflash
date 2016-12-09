@@ -2,7 +2,7 @@ package com.ywl5320.rxjavaretrofit.httpservice.service;
 
 
 /**
- * Created by ywl on 2016/5/19.
+ * Created by liuwen on 2016/10/23.
  */
 public class ExceptionApi extends RuntimeException{
 

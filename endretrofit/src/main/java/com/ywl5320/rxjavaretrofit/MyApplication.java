@@ -3,9 +3,9 @@ package com.ywl5320.rxjavaretrofit;
 import android.app.Application;
 
 /**
- * Created by ywl on 2016/6/24.
+ * Created by liuwen on 2016/10/23.
  */
-public class MyApplication extends Application{
+public class MyApplication extends Application {
 
     private static MyApplication instance;
 

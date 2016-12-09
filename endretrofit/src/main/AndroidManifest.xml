@@ -3,10 +3,21 @@
           xmlns:android="http://schemas.android.com/apk/res/android">
 
   <uses-permission android:name="android.permission.INTERNET"/>
-  <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
   <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
   <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+  <uses-permission android:name="android.permission.CALL_PHONE"/>
+  <!--录音-->
+  <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+  <!--相机-->
+  <uses-permission android:name="android.permission.CAMERA"/>
+  <!--外置存储-->
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+  <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+  <!--位置-->
+  <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+  <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+  <!--通讯录-->
+  <uses-permission android:name="android.permission.READ_CONTACTS"/>
 
 
   <application
@@ -29,6 +40,8 @@
     <activity android:name=".Activity.NormalRecyclerActivity"/>
     <!--带广告头的上拉刷新和下拉加载页面-->
     <activity android:name=".Activity.BananerRefalshActivity"/>
+    <!--验证android6.0各种权限测试-->
+    <activity android:name=".Activity.ManagerPermissionActivity"/>
   </application>
 
 </manifest>

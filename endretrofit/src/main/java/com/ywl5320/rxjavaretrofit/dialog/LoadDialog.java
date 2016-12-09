@@ -10,7 +10,7 @@ import android.widget.TextView;
 import com.ywl5320.rxjavaretrofit.R;
 
 /**
- * Created by ywl on 2016/3/9.
+ * Created by liuwen on 2016/11/17
  */
 public class LoadDialog extends Dialog{
 

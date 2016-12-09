@@ -16,7 +16,7 @@ import retrofit2.http.Url;
 import rx.Observable;
 
 /**
- * Created by ywl on 2016/5/19.
+ * Created by liuwen on 2016/10/23
  */
 public interface UserService {
 

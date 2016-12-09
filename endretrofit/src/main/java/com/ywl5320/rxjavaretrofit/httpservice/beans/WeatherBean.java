@@ -1,7 +1,7 @@
 package com.ywl5320.rxjavaretrofit.httpservice.beans;
 
 /**
- * Created by ywl on 2016/6/26.
+ * Created by liuwen on 2016/10/23.
  */
 public class WeatherBean {
     private int status;

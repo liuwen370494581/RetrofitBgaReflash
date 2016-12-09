@@ -12,7 +12,7 @@ import rx.Observable;
 import rx.Subscriber;
 
 /**
- * Created by ywl on 2016/5/19.
+ * Created by liuwen on 2016/10/23.
  */
 public class UserApi extends BaseApi {
 

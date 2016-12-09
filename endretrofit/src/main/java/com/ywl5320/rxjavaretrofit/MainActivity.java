@@ -3,12 +3,16 @@ package com.ywl5320.rxjavaretrofit;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.ywl5320.rxjavaretrofit.Activity.BananerRefalshActivity;
 import com.ywl5320.rxjavaretrofit.Activity.DefineLoadWithRefreshActivity;
+import com.ywl5320.rxjavaretrofit.Activity.ManagerPermissionActivity;
 import com.ywl5320.rxjavaretrofit.Activity.NormalRecyclerActivity;
 import com.ywl5320.rxjavaretrofit.dialog.LoadDialog;
 import com.ywl5320.rxjavaretrofit.httpservice.beans.UserBean;
@@ -21,7 +25,7 @@ import com.ywl5320.rxjavaretrofit.utils.ToastUtils;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button btnLogin;
+    private Button btnLogin, btnAndroidEvent;
     public LoadDialog loadDialog;
 
     @Override
@@ -29,6 +33,42 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         btnLogin = (Button) findViewById(R.id.btn_login);
+        btnAndroidEvent = (Button) findViewById(R.id.btn_android_event);
+
+
+        //安卓的的事件分发机制
+        /**
+         * 可以先确定的是setOnTouch事件优先于setOnClick
+         * 当setonTouch事件的返回值为true时 setOnClick便不会再执行了
+         * 看下面的源码即可得知 当OnTouchListener的监听事件不为空和当次
+         * 按钮为点击状态时和onTouch事件的返回值 都为true的情况 就直接返回
+         * true。只要一个条件为false的情况下 都会去执行onTouchEvent方法
+         *
+         */
+//        public boolean dispatchTouchEvent(MotionEvent event) {
+//            if (mOnTouchListener != null && (mViewFlags & ENABLED_MASK) == ENABLED &&
+//                    mOnTouchListener.onTouch(this, event)) {
+//                return true;
+//            }
+//            return onTouchEvent(event);
+//        }
+
+
+        btnAndroidEvent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.v("MainActivity", "onClick" + "点击了");
+                ToastUtils.showToast(MainActivity.this, "onClick");
+            }
+        });
+        btnAndroidEvent.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                Log.v("MainActivity", "OnTouch点击了" + event.getAction());
+                ToastUtils.showToast(MainActivity.this, "onTouch" + event.getAction());
+                return true;
+            }
+        });
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -79,6 +119,10 @@ public class MainActivity extends AppCompatActivity {
 
     public void toBananerReflash(View view) {
         startActivity(new Intent(MainActivity.this, BananerRefalshActivity.class));
+    }
+
+    public void toPermissionManager(View view) {
+        startActivity(new Intent(MainActivity.this, ManagerPermissionActivity.class));
     }
 
 

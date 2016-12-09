@@ -14,7 +14,7 @@ import com.ywl5320.rxjavaretrofit.httpservice.beans.wuLiuInfo;
 import java.util.List;
 
 /**
- * Created by fml on 2015/12/3 0003.
+ *  Created by liuwen on 2016/10/13.
  */
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
     private LayoutInflater mLayoutInflater;
