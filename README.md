@@ -4,6 +4,7 @@
 * 2. 已经是完全封装好的 直接可以使用即可的
 
 * 3代码调用
+* 
 * private void getDateFromService() {
           showLoadDialog("请稍等");
            UserApi.getInstance().getKuaidInfo("zhongtong", "418271182599", new HttpSubscriber<wuLiuInfo>(new SubscriberOnListener() {
@@ -21,12 +22,11 @@
             }
         }, DefineLoadWithRefreshActivity.this));
     }
-   
+       
     
     
-    
-# 可能是最精简的Android6.0运行时权限处理方式
-
+# 可能是最精简的Android6.0运行时权限处理方式 
+* 在BaseActivity中封装 具体工具类在Utils 
 * 使用方式
 
 * 以拨打电话为例
@@ -55,8 +55,7 @@
 * 如果在View中传getContext();
 
 * 等等.....
-
-    private void doCallPhone() {
+ *  private void doCallPhone() {
         XPermissionUtils.requestPermissions(this, 1, new String[]{Manifest.permission
                 .CALL_PHONE}, new XPermissionUtils.OnPermissionListener() {
             @Override
@@ -72,4 +71,5 @@
             }
         });
     }
+  
     
