@@ -63,8 +63,8 @@
 * 如果在View中传getContext();
 
 * 代码调用
-#### 
-    /**
+
+###  
      * 拨打电话
      */
     public void callPhone() {
@@ -85,5 +85,6 @@
         });
     }
 
+   
   
     
