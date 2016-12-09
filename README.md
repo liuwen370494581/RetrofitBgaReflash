@@ -41,7 +41,7 @@
 
 * <uses-permission android:name="android.permission.CALL_PHONE"/>
 
-* 2、在基类中加上回调方法
+* 2、在基类即是BaseActivity中加上回调方法 
 
 
 
@@ -62,10 +62,10 @@
 
 * 如果在View中传getContext();
 
-* 等等.....
-
-####   /**
-     * 拨打电话
+* 代码调用
+#### 
+      /*
+     * 拨打电话
      */
     public void callPhone() {
         XPermissionUtils.requestPermissions(this, RequestCode.PHONE, new String[]{Manifest.permission
