@@ -3,28 +3,34 @@
 
 * 2. 已经是完全封装好的 直接可以使用即可的
 
-* 3代码调用
-* 
-* private void getDateFromService() {
-          showLoadDialog("请稍等");
-           UserApi.getInstance().getKuaidInfo("zhongtong", "418271182599", new HttpSubscriber<wuLiuInfo>(new SubscriberOnListener() {
-            @Override
-            public void onSucceed(Object data) {
-                mListData.addAll((Collection<? extends wuLiuInfo>) data);
-                mRecyclerViewAdapter.notifyDataSetChanged();
-                hideLoadDialog();
-                // Toast.makeText(NormalRecyclerActivity.this, mDataList.toString(), Toast.LENGTH_SHORT).show();
-            }
-            @Override
-            public void onError(int code, String msg) {
-                hideLoadDialog();
-                Toast.makeText(DefineLoadWithRefreshActivity.this, msg, Toast.LENGTH_SHORT).show();
-            }
-        }, DefineLoadWithRefreshActivity.this));
-    }
-       
-    
-    
+###
+ 
+	btnLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                showLoadDialog("正在获取快递物流信息");
+
+
+                UserApi.getInstance().getKuaidInfo("zhongtong", "418271182599", new HttpSubscriber<wuLiuInfo>(new SubscriberOnListener() {
+                    @Override
+                    public void onSucceed(Object data) {
+                        hideLoadDialog();
+                        ToastUtils.showToast(MainActivity.this, data.toString());
+                    }
+
+                    @Override
+                    public void onError(int code, String msg) {
+                        ToastUtils.showToast(MainActivity.this, "获取内容失败");
+                        hideLoadDialog();
+
+                    }
+                }, MainActivity.this));
+
+
+
+
+				
 # 可能是最精简的Android6.0运行时权限处理方式 
 * 在BaseActivity中封装 具体工具类在Utils 
 * 使用方式
@@ -36,13 +42,14 @@
 * <uses-permission android:name="android.permission.CALL_PHONE"/>
 
 * 2、在基类中加上回调方法
-
+###
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[]
             grantResults) {
         XPermissionUtils.onRequestPermissionsResult(requestCode, permissions, grantResults);
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
     }
+				
 * 3、调用方法
 
 * XPermissionUtils.requestPermissions(Context context, int requestCode, String[] permissions, OnPermissionListener listener)
