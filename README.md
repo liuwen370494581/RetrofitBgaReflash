@@ -64,8 +64,8 @@
 
 * 代码调用
 #### 
-      /*
-     * 拨打电话
+    /**
+     * 拨打电话
      */
     public void callPhone() {
         XPermissionUtils.requestPermissions(this, RequestCode.PHONE, new String[]{Manifest.permission
