@@ -85,6 +85,13 @@
         });
     }
 
+
+  # 特别感谢 
    
-  
+  https://github.com/AndSync/XPermissionUtils
+ 
+  https://github.com/bingoogolapple
+  
+  https://github.com/wanliyang1990/RxjavaRetrofit
+  
     
