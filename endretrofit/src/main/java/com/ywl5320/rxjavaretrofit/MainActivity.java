@@ -125,6 +125,9 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(MainActivity.this, ManagerPermissionActivity.class));
     }
 
+    public void toAdDialog(View view){
+        startActivity(new Intent(MainActivity.this, ManagerPermissionActivity.class));
+    }
 
     public void showLoadDialog(String msg) {
         if (loadDialog == null) {

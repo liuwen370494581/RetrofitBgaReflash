@@ -2,18 +2,13 @@ package com.ywl5320.rxjavaretrofit.Activity;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.ywl5320.rxjavaretrofit.Adapter.RecyclerViewAdapter;
 import com.ywl5320.rxjavaretrofit.BaseActivity.BaseActivity;
 import com.ywl5320.rxjavaretrofit.R;
 import com.ywl5320.rxjavaretrofit.View.DefineBAGRefreshWithLoadView;
@@ -25,7 +20,6 @@ import com.ywl5320.rxjavaretrofit.httpservice.subscribers.SubscriberOnListener;
 import com.ywl5320.rxjavaretrofit.pjo.BannerModel;
 import com.ywl5320.rxjavaretrofit.utils.ToastUtils;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import cn.bingoogolapple.androidcommon.adapter.BGAOnRVItemClickListener;
@@ -44,8 +38,6 @@ public class BananerRefalshActivity extends BaseActivity implements BGARefreshLa
     private BGABanner mBanner;//广告头
     private ContentAdapter mContentAdapter;//适配器
     private Context mContext;
-
-
     private DefineBAGRefreshWithLoadView mDefineBAGRefreshWithLoadView = null;
     public LoadDialog loadDialog;
     private int page = 0;// 表示第一页 模拟
@@ -170,7 +162,7 @@ public class BananerRefalshActivity extends BaseActivity implements BGARefreshLa
         page++;
         if (page > totalPage) {
             mBGARefreshLayout.endLoadingMore();
-            ToastUtils.showToast(this,"没有更多数据了");
+            ToastUtils.showToast(this, "没有更多数据了");
             return false;
         }
         UserApi.getInstance().getKuaidInfo("zhongtong", "418271182599", new HttpSubscriber<wuLiuInfo>(new SubscriberOnListener() {
@@ -201,6 +193,7 @@ public class BananerRefalshActivity extends BaseActivity implements BGARefreshLa
                     .setText(R.id.item_context, model.getContext());
         }
     }
+
 
     public void showLoadDialog(String msg) {
         if (loadDialog == null) {
