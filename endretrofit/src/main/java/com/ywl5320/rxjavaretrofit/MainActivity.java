@@ -8,12 +8,16 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.gson.Gson;
+import com.ywl5320.rxjavaretrofit.Activity.AddViewActivity;
 import com.ywl5320.rxjavaretrofit.Activity.BananerRefalshActivity;
 import com.ywl5320.rxjavaretrofit.Activity.DefineLoadWithRefreshActivity;
 import com.ywl5320.rxjavaretrofit.Activity.ManagerPermissionActivity;
 import com.ywl5320.rxjavaretrofit.Activity.NormalRecyclerActivity;
+import com.ywl5320.rxjavaretrofit.BaseActivity.BaseActivity;
 import com.ywl5320.rxjavaretrofit.dialog.LoadDialog;
 import com.ywl5320.rxjavaretrofit.httpservice.beans.UserBean;
 import com.ywl5320.rxjavaretrofit.httpservice.beans.WeatherBean;
@@ -21,12 +25,14 @@ import com.ywl5320.rxjavaretrofit.httpservice.beans.wuLiuInfo;
 import com.ywl5320.rxjavaretrofit.httpservice.serviceapi.UserApi;
 import com.ywl5320.rxjavaretrofit.httpservice.subscribers.HttpSubscriber;
 import com.ywl5320.rxjavaretrofit.httpservice.subscribers.SubscriberOnListener;
+import com.ywl5320.rxjavaretrofit.pjo.RxBusModel;
 import com.ywl5320.rxjavaretrofit.utils.ToastUtils;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
     private Button btnLogin, btnAndroidEvent;
     public LoadDialog loadDialog;
+    private TextView tvRxBus;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         btnLogin = (Button) findViewById(R.id.btn_login);
         btnAndroidEvent = (Button) findViewById(R.id.btn_android_event);
+        tvRxBus = (TextView) findViewById(R.id.tv_rxbus);
 
 
         //安卓的的事件分发机制
@@ -91,22 +98,20 @@ public class MainActivity extends AppCompatActivity {
 
                     }
                 }, MainActivity.this));
-
-//                UserApi.getInstance().getWeather("成都", "json", "5NImrCXDE8hR05Yc49Bgs5QG", new HttpSubscriber<WeatherBean>(new SubscriberOnListener<WeatherBean>() {
-//                    @Override
-//                    public void onSucceed(WeatherBean data) {
-//                        hideLoadDialog();//这个可以在回调里面添加到complete里面，关闭对话框只写到这个里面就可以了
-//                    }
-//
-//                    @Override
-//                    public void onError(int code, String msg) {
-//                        Toast.makeText(MainActivity.this, "status:" + code + "," + msg, Toast.LENGTH_LONG).show();
-//                        hideLoadDialog();
-//                    }
-//                }, MainActivity.this));
             }
         });
 
+    }
+
+    @Override
+    protected void doOnNext(Object o) {
+        if (tvRxBus != null) {
+            Gson gson = new Gson();
+            RxBusModel rxbus = gson.fromJson(o.toString(), RxBusModel.class);
+            if (rxbus.getTo().equals("MainActivity")) {
+                tvRxBus.setText("接收到消息-->" + rxbus.getContent());
+            }
+        }
     }
 
     public void toReflash(View view) {
@@ -125,8 +130,9 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(MainActivity.this, ManagerPermissionActivity.class));
     }
 
-    public void toAdDialog(View view){
-        startActivity(new Intent(MainActivity.this, ManagerPermissionActivity.class));
+    public void toAddView(View view) {
+        //测试rxBus
+        startActivity(new Intent(MainActivity.this, AddViewActivity.class));
     }
 
     public void showLoadDialog(String msg) {

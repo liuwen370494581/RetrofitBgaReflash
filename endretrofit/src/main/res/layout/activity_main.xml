@@ -69,4 +69,22 @@
       android:onClick="toPermissionManager"
       android:text="基于android6.0权限验证"/>
 
+  <Button
+      android:id="@+id/btn_add_view"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_below="@id/btn_bananer_recyclerView"
+      android:layout_marginLeft="5dp"
+      android:layout_marginTop="3dp"
+      android:layout_toRightOf="@id/btn_android_event"
+      android:background="@drawable/shape_red"
+      android:onClick="toAddView"
+      android:text="动态添加布和RxBus"/>
+
+  <TextView
+      android:id="@+id/tv_rxbus"
+      android:layout_width="match_parent"
+      android:layout_height="40dp"
+      android:layout_below="@id/btn_add_view"
+      android:text="hello rxbus"/>
 </RelativeLayout>

@@ -42,6 +42,8 @@
     <activity android:name=".Activity.BananerRefalshActivity"/>
     <!--验证android6.0各种权限测试-->
     <activity android:name=".Activity.ManagerPermissionActivity"/>
+    <!--动态添加布局或者删除-->
+    <activity android:name=".Activity.AddViewActivity"/>
   </application>
 
 </manifest>

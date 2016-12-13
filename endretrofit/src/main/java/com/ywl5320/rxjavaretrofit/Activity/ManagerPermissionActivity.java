@@ -28,6 +28,11 @@ public class ManagerPermissionActivity extends BaseActivity {
         setContentView(R.layout.manager_permission_activity);
     }
 
+    @Override
+    protected void doOnNext(Object o) {
+
+    }
+
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn_phone_test:

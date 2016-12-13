@@ -57,6 +57,11 @@ public class BananerRefalshActivity extends BaseActivity implements BGARefreshLa
         LoadBananerData();
     }
 
+    @Override
+    protected void doOnNext(Object o) {
+
+    }
+
     private void LoadBananerData() {
         UserApi.getInstance().fetchItemsWithItemCount("http://7xk9dj.com1.z0.glb.clouddn.com/banner/api/5item.json", new HttpSubscriber<BannerModel>(new SubscriberOnListener() {
             @Override
@@ -89,7 +94,6 @@ public class BananerRefalshActivity extends BaseActivity implements BGARefreshLa
         mContentAdapter = new ContentAdapter(mRecyclerView);
         View headerView = View.inflate(BananerRefalshActivity.this, R.layout.layout_header, null);
         mBanner = (BGABanner) headerView.findViewById(R.id.banner);
-        mBannerRecycler = (RecyclerView) headerView.findViewById(R.id.banner_recyclerview);
 
 
         mBanner.setAdapter(new BGABanner.Adapter() {

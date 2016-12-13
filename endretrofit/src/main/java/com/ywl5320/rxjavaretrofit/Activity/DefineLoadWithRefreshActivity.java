@@ -68,6 +68,11 @@ public class DefineLoadWithRefreshActivity extends BaseActivity implements BGARe
 
     }
 
+    @Override
+    protected void doOnNext(Object o) {
+
+    }
+
 
     public void showLoadDialog(String msg) {
         if (loadDialog == null) {

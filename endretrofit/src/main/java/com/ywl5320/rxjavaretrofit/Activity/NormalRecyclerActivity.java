@@ -44,6 +44,10 @@ public class NormalRecyclerActivity extends BaseActivity {
         getDateFromService();
     }
 
+    @Override
+    protected void doOnNext(Object o) {
+    }
+
     /**
      * 顶部导航栏初始化
      */
