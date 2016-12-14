@@ -43,8 +43,47 @@
         android:text="无网络缓存图片"/>
   </LinearLayout>
 
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:orientation="horizontal">
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_weight="1"
+        android:background="@drawable/shape_red"
+        android:onClick="toDialog"
+        android:text="单选对话框"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_weight="1"
+        android:background="@drawable/shape_red"
+        android:onClick="toNotification"
+        android:text="单选对话框"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_weight="1"
+        android:background="@drawable/shape_red"
+        android:onClick="toDesignNotification"
+        android:text="单选对话框"/>
+
+  </LinearLayout>
+
   <TextView
       android:id="@+id/show"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"/>
+
 </LinearLayout>

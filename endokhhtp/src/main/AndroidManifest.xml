@@ -8,21 +8,19 @@
   <application
       android:name=".App"
       android:allowBackup="true"
-      android:icon="@mipmap/ic_launcher"
+      android:icon="@mipmap/default_ptr_wodfan_frame1"
       android:label="@string/app_name"
+      android:logo="@mipmap/default_ptr_wodfan_frame2"
       android:supportsRtl="true"
       android:theme="@style/AppTheme">
     <activity android:name=".MainActivity">
       <intent-filter>
         <action android:name="android.intent.action.MAIN"/>
-
         <category android:name="android.intent.category.LAUNCHER"/>
       </intent-filter>
     </activity>
     <activity android:name=".activity.RetrofitActivity"
         />
     <activity android:name=".activity.ImageCacheActivity"/>
-
   </application>
-
 </manifest>
