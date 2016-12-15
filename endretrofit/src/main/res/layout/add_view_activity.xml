@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:android_custom="http://schemas.android.com/apk/res-auto"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:orientation="vertical">
-
-  <ScrollView
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content">
 
     <LinearLayout
         android:id="@+id/ly_01"
@@ -15,11 +12,51 @@
         android:orientation="vertical">
 
       <TextView
-          android:text="addView---->RxBus"
           android:id="@+id/tv_addView_rxBus"
           android:layout_width="match_parent"
-          android:layout_height="40dp"/>
+          android:layout_height="40dp"
+          android:text="addView---->RxBus"/>
     </LinearLayout>
-  </ScrollView>
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="15dp">
+
+      <ImageView
+          android:id="@+id/item_msg_delete"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignParentRight="true"
+          android:layout_centerVertical="true"
+          android:scaleType="centerCrop"
+          android:src="@mipmap/icon_delete_gray"/>
+
+      <ImageView
+          android:id="@+id/item_msg_download"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_centerVertical="true"
+          android:layout_marginRight="10dp"
+          android:layout_toLeftOf="@id/item_msg_delete"
+          android:scaleType="centerCrop"
+          android:src="@mipmap/icon_download_gray"
+          android:visibility="visible"/>
+
+      <com.ywl5320.rxjavaretrofit.View.RoundProgressBar
+          android:id="@+id/roundProgressBar2"
+          android:layout_width="22dp"
+          android:layout_height="22dp"
+          android:layout_centerVertical="true"
+          android:layout_marginRight="10dp"
+          android:layout_toLeftOf="@+id/item_msg_delete"
+          android:visibility="gone"
+          android_custom:roundColor="@color/blue"
+          android_custom:roundProgressColor="@color/blue"
+          android_custom:roundWidth="2dp"
+          android_custom:textColor="@color/blue"
+          android_custom:textIsDisplayable="true"
+          android_custom:textSize="8sp"
+          />
+    </RelativeLayout>
 </LinearLayout>

@@ -44,7 +44,6 @@ public class ToastUtils {
 
     /**
      * 居中显示的toast ，带图片
-     *
      * @param context     上下文对象
      * @param content     提示语
      * @param drawableRes 显示的图片资源

@@ -1,5 +1,6 @@
 package com.ywl5320.rxjavaretrofit.BaseActivity;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
@@ -13,6 +14,7 @@ import android.view.View;
 import android.view.Window;
 
 import com.ywl5320.rxjavaretrofit.permisssion.XPermissionUtils;
+import com.ywl5320.rxjavaretrofit.utils.ActivityKiller;
 import com.ywl5320.rxjavaretrofit.utils.RxBus;
 
 import de.greenrobot.event.EventBus;
@@ -38,6 +40,8 @@ public abstract class BaseActivity extends AppCompatActivity {
         //初始化rxBus
         initRxBus(setOnNext());
 
+        //12月15日之前加入ActivityKiller
+        ActivityKiller.getInstance().addActivity(this);
     }
 
     //在12月9日之前加入权限管理的验证
@@ -80,5 +84,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         unbindRxBus();
+        //12月15日加入ActivityKiller
+        ActivityKiller.getInstance().removeActivity(this);
     }
 }

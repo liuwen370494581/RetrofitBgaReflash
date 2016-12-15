@@ -12,6 +12,7 @@ import com.ywl5320.rxjavaretrofit.R;
 
 /**
  * Created by liuwen on 2016/12/9.
+ * 权限认证类
  */
 public class DialogUtil {
 

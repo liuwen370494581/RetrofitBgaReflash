@@ -69,7 +69,5 @@ public class AddViewActivity extends BaseActivity {
                 RxBus.send(gson.toJson(rxBus));
             }
         });
-
-
     }
 }

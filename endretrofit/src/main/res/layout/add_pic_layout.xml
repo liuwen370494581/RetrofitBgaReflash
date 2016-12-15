@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#44000000"
+                android:clickable="true"
+                android:onClick="cancel">
+
+  <LinearLayout
+      android:id="@+id/addpic_menu"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_alignParentBottom="true"
+      android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+      <Button
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="2dp"
+          android:background="@drawable/square_white_to_gray"
+          android:onClick="addfromAlbum"
+          android:padding="12dp"
+          android:text="从相册里面选择"
+          android:textColor="@color/text_color_33"
+          android:textSize="20sp"/>
+
+      <View
+          android:layout_width="match_parent"
+          android:layout_height="0.5dp"
+          android:alpha="0.3"
+          android:background="@color/gray"/>
+
+      <Button
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:background="@drawable/square_white_to_gray"
+          android:onClick="addfromCamera"
+          android:padding="12dp"
+          android:text="拍照"
+          android:textColor="@color/text_color_33"
+          android:textSize="20sp"/>
+    </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/square_white_to_gray"
+        android:onClick="cancel"
+        android:padding="12dp"
+        android:text="取消"
+        android:textColor="@color/text_color_33"
+        android:textSize="20sp"/>
+  </LinearLayout>
+
+</RelativeLayout>

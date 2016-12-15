@@ -18,6 +18,7 @@ import java.util.List;
 
 /**
  * Created by liuwen on 2016/12/9.
+ * 权限认证类
  */
 public class LocationUtils {
 
@@ -35,7 +36,7 @@ public class LocationUtils {
 
                     @Override
                     public void onPermissionDenied() {
-                        DialogUtil.showAlertDialog(context,"位置");
+                        DialogUtil.showAlertDialog(context, "位置");
                     }
                 });
     }

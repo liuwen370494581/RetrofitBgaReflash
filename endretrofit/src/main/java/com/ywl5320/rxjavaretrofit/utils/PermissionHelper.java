@@ -9,6 +9,7 @@ import android.media.MediaRecorder;
 
 /**
  * Created by liuwen on 2016/12/9.
+ * 权限认证类
  */
 public class PermissionHelper {
 
