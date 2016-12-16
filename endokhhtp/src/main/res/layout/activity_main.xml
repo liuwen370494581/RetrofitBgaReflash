@@ -67,7 +67,7 @@
         android:layout_weight="1"
         android:background="@drawable/shape_red"
         android:onClick="toNotification"
-        android:text="单选对话框"/>
+        android:text="Notification通知"/>
 
     <Button
         android:layout_width="match_parent"
@@ -77,7 +77,7 @@
         android:layout_weight="1"
         android:background="@drawable/shape_red"
         android:onClick="toDesignNotification"
-        android:text="单选对话框"/>
+        android:text="Design单选对话框"/>
 
   </LinearLayout>
 

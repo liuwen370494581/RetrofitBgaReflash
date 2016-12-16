@@ -5,4 +5,9 @@
     <item>中</item>
     <item>高</item>
   </string-array>
+
+
+  <string name="level_1">级别1（最低）</string>
+  <string name="level_2">级别2</string>
+  <string name="level_3">级别3（最高）</string>
 </resources>
