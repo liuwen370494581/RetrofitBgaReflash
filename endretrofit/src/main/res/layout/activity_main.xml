@@ -1,90 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:tools="http://schemas.android.com/tools"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="4dp"
-                tools:context="com.ywl5320.rxjavaretrofit.MainActivity">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:layout_margin="4dp"
+              android:orientation="vertical"
+              tools:context="com.ywl5320.rxjavaretrofit.MainActivity">
 
-
-  <Button
-      android:id="@+id/btn_login"
-      android:layout_width="150dp"
-      android:layout_height="wrap_content"
-      android:layout_marginTop="3dp"
-      android:background="@drawable/shape_red"
-      android:text="获取天气数据"/>
-
-  <Button
-      android:id="@+id/btn_reflash"
+  <LinearLayout
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:layout_marginLeft="5dp"
-      android:layout_marginTop="3dp"
-      android:layout_toRightOf="@id/btn_login"
-      android:background="@drawable/shape_red"
-      android:onClick="toReflash"
-      android:text="跳转到下拉刷新上拉加载页面"/>
+      android:orientation="horizontal">
 
-  <Button
-      android:id="@+id/btn_nomal_recyclerView"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_below="@id/btn_reflash"
-      android:layout_marginTop="3dp"
-      android:background="@drawable/shape_red"
-      android:onClick="toRecyclerView"
-      android:text="跳转到有广告头的普通页面"/>
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_red"
+        android:text="获取天气数据"/>
 
-  <Button
-      android:id="@+id/btn_bananer_recyclerView"
+    <Button
+        android:id="@+id/btn_reflash"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_red"
+        android:onClick="toReflash"
+        android:text="跳转到下拉刷新上拉加载页面"/>
+  </LinearLayout>
+
+  <LinearLayout
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:layout_below="@id/btn_reflash"
-      android:layout_marginLeft="5dp"
-      android:layout_marginTop="3dp"
-      android:layout_toRightOf="@id/btn_nomal_recyclerView"
-      android:background="@drawable/shape_red"
-      android:onClick="toBananerReflash"
-      android:text="跳转到有广告头的刷新页面"/>
+      android:orientation="horizontal">
 
-  <Button
-      android:id="@+id/btn_android_event"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_below="@id/btn_bananer_recyclerView"
-      android:layout_marginTop="3dp"
-      android:background="@drawable/shape_red"
-      android:text="安卓事件的分发机制理解"/>
+    <Button
+        android:id="@+id/btn_nomal_recyclerView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_red"
+        android:onClick="toRecyclerView"
+        android:text="跳转到有广告头的普通页面"/>
 
-  <Button
-      android:id="@+id/btn_permission_test"
+    <Button
+        android:id="@+id/btn_bananer_recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_red"
+        android:onClick="toBananerReflash"
+        android:text="跳转到有广告头的刷新页面"/>
+  </LinearLayout>
+
+  <LinearLayout
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:layout_below="@id/btn_bananer_recyclerView"
-      android:layout_marginLeft="5dp"
-      android:layout_marginTop="3dp"
-      android:layout_toRightOf="@id/btn_android_event"
-      android:background="@drawable/shape_red"
-      android:onClick="toPermissionManager"
-      android:text="基于android6.0权限验证"/>
+      android:orientation="horizontal">
 
-  <Button
-      android:id="@+id/btn_add_view"
+    <Button
+        android:id="@+id/btn_android_event"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_red"
+        android:text="安卓事件的分发机制理解"/>
+
+    <Button
+        android:id="@+id/btn_permission_test"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_red"
+        android:onClick="toPermissionManager"
+        android:text="基于android6.0权限验证"/>
+  </LinearLayout>
+
+  <LinearLayout
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:layout_below="@id/btn_bananer_recyclerView"
-      android:layout_marginLeft="5dp"
-      android:layout_marginTop="3dp"
-      android:layout_toRightOf="@id/btn_android_event"
-      android:background="@drawable/shape_red"
-      android:onClick="toAddView"
-      android:text="动态添加布和RxBus"/>
+      android:orientation="horizontal">
 
-  <TextView
-      android:id="@+id/tv_rxbus"
-      android:layout_width="match_parent"
-      android:layout_height="40dp"
-      android:layout_below="@id/btn_add_view"
-      android:text="hello rxbus"/>
-</RelativeLayout>
+    <Button
+        android:id="@+id/btn_add_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_red"
+        android:onClick="toAddView"
+        android:text="动态添加布和RxBus"/>
+
+    <TextView
+        android:id="@+id/tv_rxbus"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="hello rxbus"/>
+  </LinearLayout>
+</LinearLayout>

@@ -6,7 +6,7 @@ import android.content.pm.PackageManager;
 
 /**
  * Created by liuwen on 2016/12/15.
- * 检查版本类
+ * 检查版本类 升级使用的 一般是检查版本号或者版本name
  */
 public class CheckVersionUtils {
 

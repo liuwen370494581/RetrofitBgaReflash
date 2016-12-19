@@ -1,15 +1,12 @@
 package com.ywl5320.rxjavaretrofit;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.ywl5320.rxjavaretrofit.Activity.AddViewActivity;
@@ -19,8 +16,6 @@ import com.ywl5320.rxjavaretrofit.Activity.ManagerPermissionActivity;
 import com.ywl5320.rxjavaretrofit.Activity.NormalRecyclerActivity;
 import com.ywl5320.rxjavaretrofit.BaseActivity.BaseActivity;
 import com.ywl5320.rxjavaretrofit.dialog.LoadDialog;
-import com.ywl5320.rxjavaretrofit.httpservice.beans.UserBean;
-import com.ywl5320.rxjavaretrofit.httpservice.beans.WeatherBean;
 import com.ywl5320.rxjavaretrofit.httpservice.beans.wuLiuInfo;
 import com.ywl5320.rxjavaretrofit.httpservice.serviceapi.UserApi;
 import com.ywl5320.rxjavaretrofit.httpservice.subscribers.HttpSubscriber;

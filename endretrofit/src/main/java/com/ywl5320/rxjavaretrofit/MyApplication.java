@@ -7,6 +7,7 @@ import android.app.Application;
  */
 public class MyApplication extends Application {
 
+    //保存一些static变量的值
     private static MyApplication instance;
 
     @Override

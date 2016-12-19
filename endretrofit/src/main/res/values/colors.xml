@@ -1,24 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+  <color name="colorPrimary">#3F51B5</color>
+  <color name="colorPrimaryDark">#303F9F</color>
+  <color name="colorAccent">#FF4081</color>
 
-    <color name="item_press">#AAff0000</color>
-    <color name="item_normal">#44ff0000</color>
-    <color name="item_normal22">#22ff0000</color>
+  <color name="item_press">#AAff0000</color>
+  <color name="item_normal">#44ff0000</color>
+  <color name="item_normal22">#22ff0000</color>
 
-    <color name="common_title">#F9F9F9</color>
-    <color name="blue">#76cac1</color>
-    <color name="whites">#ffffff</color>
-    <color name="gray_font">#000000</color>
-    <color name="yellow_warning">#FFFF99</color>
+  <color name="common_title">#F9F9F9</color>
+  <color name="blue">#76cac1</color>
+  <color name="whites">#ffffff</color>
+  <color name="gray_font">#000000</color>
+  <color name="yellow_warning">#FFFF99</color>
 
-    <color name="text_color_33">#333333</color>
-    <color name="text_color_66">#666666</color>
-    <color name="text_color_99">#999999</color>
+  <color name="text_color_33">#333333</color>
+  <color name="text_color_66">#666666</color>
+  <color name="text_color_99">#999999</color>
 
-    <color name="gray">#808080</color>
-    <!-- activity背景颜色 -->
-    <color name="activity_bg_color">#f0eff4</color>
+  <color name="gray">#808080</color>
+  <!-- activity背景颜色 -->
+  <color name="activity_bg_color">#f0eff4</color>
+  <color name="dark_gray1">#212121</color>
 </resources>

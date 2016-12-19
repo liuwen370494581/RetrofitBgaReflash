@@ -11,18 +11,15 @@ import java.util.List;
  * Created by liuwen on 2016/12/15.
  */
 public class ActivityKiller {
-
     private static ActivityKiller activityKiller = null;
-    private List<Activity> activityList = new ArrayList<>();
-
+    private List<Activity> activityList = new ArrayList<Activity>();
 
     public static ActivityKiller getInstance() {
-        if (activityKiller != null) {
+        if (activityKiller == null) {
             activityKiller = new ActivityKiller();
         }
         return activityKiller;
     }
-
 
     public void addActivity(Activity activity) {
         if (!activityList.contains(activity)) {
@@ -39,6 +36,7 @@ public class ActivityKiller {
     }
 
     public void exitActivityInList() {
+
         for (Activity activity : activityList) {
             activity.finish();
             activity = null;
