@@ -158,4 +158,8 @@ public class MainActivity extends BaseActivity {
         dialog.show();
     }
 
+    public void toAdapter(View view){
+
+    }
+
 }
