@@ -92,7 +92,7 @@
 * 写适配器只要简单的几行代码即可了
 
 
-###
+### 
 
  public NormalRecyclerViewAdapter(RecyclerView recyclerView) {
         super(recyclerView, R.layout.item_normal_1);
