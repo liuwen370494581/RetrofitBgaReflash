@@ -19,8 +19,11 @@
         <category android:name="android.intent.category.LAUNCHER"/>
       </intent-filter>
     </activity>
-    <activity android:name=".activity.RetrofitActivity"
-        />
+    <!--Retrofit访问网络-->
+    <activity android:name=".activity.RetrofitActivity"/>
+    <!--图片缓存-->
     <activity android:name=".activity.ImageCacheActivity"/>
+    <!--自定义页面-->
+    <activity android:name=".activity.DesignActivity"/>
   </application>
 </manifest>

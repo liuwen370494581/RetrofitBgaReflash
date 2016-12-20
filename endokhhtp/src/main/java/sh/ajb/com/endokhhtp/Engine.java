@@ -8,9 +8,9 @@ import retrofit2.http.GET;
 import retrofit2.http.Path;
 import retrofit2.http.Url;
 import sh.ajb.com.endokhhtp.model.BannerModel;
+import sh.ajb.com.endokhhtp.model.NormalModel;
 import sh.ajb.com.endokhhtp.model.RefreshModel;
 import sh.ajb.com.endokhhtp.model.StaggeredModel;
-
 
 
 public interface Engine {
@@ -31,5 +31,9 @@ public interface Engine {
     //获取加载更多的接口
     @GET("refreshlayout/api/moredata{pageNumber}.json")
     Call<List<RefreshModel>> loadMoreData(@Path("pageNumber") int pageNumber);
+
+    //获取adapter的数据
+    @GET
+    Call<List<NormalModel>> getNormalModels(@Url String url);
 
 }
