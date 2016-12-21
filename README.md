@@ -1,4 +1,6 @@
 # RetrofitBgaReflash
+* 1.这里的几个Demo都是平常项目中拉出来的 避免重复造轮子 记录下来 感谢GIthub 
+
 * 1.这个项目使用了Retrofit和Rxjava访问网络和BGAreflash下拉刷新和上拉加载
 
 * 2 已经是完全封装好的 直接可以使用即可的
@@ -84,6 +86,40 @@
             }
         });
     }
+
+
+# EndOkhttp 加入王浩大神的BGAAdapter 万能适配器 
+
+
+* 写适配器只要简单的几行代码即可了
+
+
+### 
+    public NormalRecyclerViewAdapter(RecyclerView recyclerView) {
+        super(recyclerView, R.layout.item_normal_1);
+    }
+
+
+    @Override
+    protected void setItemChildListener(BGAViewHolderHelper helper, int viewType) {
+        helper.setItemChildClickListener(R.id.tv_item_normal_delete);
+        helper.setItemChildLongClickListener(R.id.tv_item_normal_delete);
+        helper.setItemChildCheckedChangeListener(R.id.cb_item_normal_status);
+        helper.setRVItemChildTouchListener(R.id.iv_item_normal_avatar);
+    }
+
+    @Override
+    protected void fillData(BGAViewHolderHelper helper, int position, NormalModel model) {
+        Glide.with(mContext).load(model.avatorPath).placeholder(R.mipmap.holder_avatar).error(R.mipmap.holder_avatar).into(helper.getImageView(R.id.iv_item_normal_avatar));
+        helper.setText(R.id.tv_item_normal_title, model.title).setText(R.id.tv_item_normal_detail, model.detail);
+
+        helper.setChecked(R.id.cb_item_normal_status, model.selected);
+    }
+
+
+
+
+
 
 
   # 特别感谢 
