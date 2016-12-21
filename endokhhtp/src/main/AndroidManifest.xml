@@ -23,7 +23,9 @@
     <activity android:name=".activity.RetrofitActivity"/>
     <!--图片缓存-->
     <activity android:name=".activity.ImageCacheActivity"/>
-    <!--自定义页面-->
+    <!--适配器页面-->
     <activity android:name=".activity.DesignActivity"/>
+    <!--模仿聊天的页面-->
+    <activity android:name=".activity.ChatRecyclerActivity"/>
   </application>
 </manifest>

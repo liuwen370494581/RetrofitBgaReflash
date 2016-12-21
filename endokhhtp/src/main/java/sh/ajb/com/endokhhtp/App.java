@@ -19,11 +19,11 @@ import retrofit2.converter.gson.GsonConverterFactory;
 import sh.ajb.com.endokhhtp.utils.NetUtil;
 
 /**
- * 作者:王浩 邮件:bingoogolapple@gmail.com
- * 创建时间:15/6/21 下午10:13
- * 描述:
+ * Created by liuwen on 2016/12/19.
+ * 描述：此类放一下页面所需要的数据
  */
 public class App extends Application {
+
     private static App sInstance;
     private Engine mEngine;
     private String baseUrl = "http://7xk9dj.com1.z0.glb.clouddn.com/";

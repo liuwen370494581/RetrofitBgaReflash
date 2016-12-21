@@ -12,7 +12,9 @@ import sh.ajb.com.endokhhtp.model.NormalModel;
 import sh.ajb.com.endokhhtp.model.RefreshModel;
 import sh.ajb.com.endokhhtp.model.StaggeredModel;
 
-
+/**
+ * Created by liuwen on 2016/12/19.
+ */
 public interface Engine {
 
     @GET
@@ -35,5 +37,7 @@ public interface Engine {
     //获取adapter的数据
     @GET
     Call<List<NormalModel>> getNormalModels(@Url String url);
+
+
 
 }

@@ -24,6 +24,7 @@ import okhttp3.CacheControl;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import sh.ajb.com.endokhhtp.Base.BaseActivity;
+import sh.ajb.com.endokhhtp.activity.ChatRecyclerActivity;
 import sh.ajb.com.endokhhtp.activity.DesignActivity;
 import sh.ajb.com.endokhhtp.activity.ImageCacheActivity;
 import sh.ajb.com.endokhhtp.activity.RetrofitActivity;
@@ -124,8 +125,11 @@ public class MainActivity extends BaseActivity {
     }
 
     public void toAdapter(View view) {
-
         startActivity(new Intent(MainActivity.this, DesignActivity.class));
+    }
+
+    public void toChart(View view) {
+        startActivity(new Intent(MainActivity.this, ChatRecyclerActivity.class));
     }
 
 }
