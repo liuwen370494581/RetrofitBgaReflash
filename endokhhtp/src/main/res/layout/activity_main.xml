@@ -9,9 +9,9 @@
     tools:context="sh.ajb.com.endokhhtp.MainActivity">
 
   <LinearLayout
-      android:layout_margin="2dp"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
+      android:layout_margin="2dp"
       android:orientation="horizontal">
 
     <Button
@@ -40,9 +40,9 @@
   </LinearLayout>
 
   <LinearLayout
-      android:layout_margin="2dp"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
+      android:layout_margin="2dp"
       android:orientation="horizontal">
 
     <Button
@@ -71,9 +71,9 @@
   </LinearLayout>
 
   <LinearLayout
-      android:layout_margin="2dp"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
+      android:layout_margin="2dp"
       android:background="@drawable/shape_red"
       android:orientation="horizontal">
 
@@ -86,11 +86,11 @@
         android:text="适配器简单化"/>
 
     <Button
-        android:onClick="toChart"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:background="@drawable/shape_red"
+        android:onClick="toChart"
         android:text="聊天页面"/>
 
     <Button
@@ -98,7 +98,40 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:background="@drawable/shape_red"
-        android:text="增删改"/>
+        android:onClick="toScroller"
+        android:text="理解scroller类"/>
   </LinearLayout>
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_margin="2dp"
+      android:background="@drawable/shape_red"
+      android:orientation="horizontal">
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/shape_red"
+        android:onClick="toService"
+        android:text="轻量级的服务"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/shape_red"
+        android:onClick="toBindService"
+        android:text="BindService"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/shape_red"
+        android:text=""/>
+  </LinearLayout>
+
 
 </LinearLayout>

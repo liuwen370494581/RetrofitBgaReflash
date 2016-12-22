@@ -7,6 +7,7 @@ import sh.ajb.com.endokhhtp.model.ChatModel;
 
 /**
  * Created by liuwen on 2016/12/21.
+ * 描述 ：模拟添加数据的类
  */
 public class DataEngine {
 

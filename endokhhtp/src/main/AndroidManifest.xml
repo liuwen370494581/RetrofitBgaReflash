@@ -27,5 +27,13 @@
     <activity android:name=".activity.DesignActivity"/>
     <!--模仿聊天的页面-->
     <activity android:name=".activity.ChatRecyclerActivity"/>
+    <!--理解scroller类-->
+    <activity android:name=".activity.ScrollerActivity"/>
+
+    <!--避免app被杀死 使用一个轻量级的进程-->
+    <service
+        android:name=".Service.DaemonService"/>
+    <!--取消服务-->
+    <service android:name=".Service.CancelService"/>
   </application>
 </manifest>

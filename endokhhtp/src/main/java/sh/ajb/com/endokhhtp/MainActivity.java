@@ -3,10 +3,13 @@ package sh.ajb.com.endokhhtp;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.ServiceConnection;
 import android.os.Handler;
+import android.os.IBinder;
 import android.os.Message;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -24,12 +27,12 @@ import okhttp3.CacheControl;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import sh.ajb.com.endokhhtp.Base.BaseActivity;
+import sh.ajb.com.endokhhtp.Service.DaemonService;
 import sh.ajb.com.endokhhtp.activity.ChatRecyclerActivity;
 import sh.ajb.com.endokhhtp.activity.DesignActivity;
 import sh.ajb.com.endokhhtp.activity.ImageCacheActivity;
 import sh.ajb.com.endokhhtp.activity.RetrofitActivity;
-import sh.ajb.com.endokhhtp.net.MyAppClient;
-import sh.ajb.com.endokhhtp.net.Util.NetConfigure;
+import sh.ajb.com.endokhhtp.activity.ScrollerActivity;
 
 public class MainActivity extends BaseActivity {
 
@@ -46,7 +49,6 @@ public class MainActivity extends BaseActivity {
     NotificationCompat.Builder mBuilder;
     NotificationManager notificationManager;
     int notifyId = 100;
-
 
     private Handler handler = new Handler() {
         @Override
@@ -131,5 +133,15 @@ public class MainActivity extends BaseActivity {
     public void toChart(View view) {
         startActivity(new Intent(MainActivity.this, ChatRecyclerActivity.class));
     }
+
+    public void toScroller(View view) {
+        startActivity(new Intent(MainActivity.this, ScrollerActivity.class));
+    }
+
+    public void toService(View view) {
+        startService(new Intent(MainActivity.this, DaemonService.class));
+    }
+
+
 
 }
