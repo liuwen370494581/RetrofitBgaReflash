@@ -34,7 +34,7 @@ public class ChatRecyclerActivity extends BaseActivity implements BGAOnItemChild
         mAdapter = new RecyclerChatAdapter(chatRecyclerView);
         mAdapter.setOnItemChildClickListener(this);
         mAdapter.setData(DataEngine.loadChatModelData());
-        mAdapter.notifyDataSetChanged();
+        chatRecyclerView.setAdapter(mAdapter);
     }
 
     private void initView() {
@@ -42,7 +42,7 @@ public class ChatRecyclerActivity extends BaseActivity implements BGAOnItemChild
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         chatRecyclerView.setLayoutManager(linearLayoutManager);
-        chatRecyclerView.setAdapter(mAdapter);
+
     }
 
     @Override
