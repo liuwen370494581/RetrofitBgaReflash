@@ -195,6 +195,7 @@ public class BananerRefalshActivity extends BaseActivity implements BGARefreshLa
             helper.setText(R.id.item_time, model.getTime())
                     .setText(R.id.item_ftime, model.getFtime())
                     .setText(R.id.item_context, model.getContext());
+
         }
     }
 
