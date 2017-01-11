@@ -5,6 +5,8 @@
 
 * 2 已经是完全封装好的 直接可以使用即可的
 
+![](https://github.com/liuwen370494581/RetrofitBgaReflash/blob/master/endretrofit/gif/device-2016-12-27-091225.png)   
+
 ###
  
 	btnLogin.setOnClickListener(new View.OnClickListener() {
