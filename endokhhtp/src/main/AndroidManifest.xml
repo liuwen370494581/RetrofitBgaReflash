@@ -1,39 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="sh.ajb.com.endokhhtp"
-          xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="sh.ajb.com.endokhhtp">
 
-  <uses-permission android:name="android.permission.INTERNET"/>
-  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
-  <application
-      android:name=".App"
-      android:allowBackup="true"
-      android:icon="@mipmap/default_ptr_wodfan_frame1"
-      android:label="@string/app_name"
-      android:logo="@mipmap/default_ptr_wodfan_frame2"
-      android:supportsRtl="true"
-      android:theme="@style/AppTheme">
-    <activity android:name=".MainActivity">
-      <intent-filter>
-        <action android:name="android.intent.action.MAIN"/>
-        <category android:name="android.intent.category.LAUNCHER"/>
-      </intent-filter>
-    </activity>
-    <!--Retrofit访问网络-->
-    <activity android:name=".activity.RetrofitActivity"/>
-    <!--图片缓存-->
-    <activity android:name=".activity.ImageCacheActivity"/>
-    <!--适配器页面-->
-    <activity android:name=".activity.DesignActivity"/>
-    <!--模仿聊天的页面-->
-    <activity android:name=".activity.ChatRecyclerActivity"/>
-    <!--理解scroller类-->
-    <activity android:name=".activity.ScrollerActivity"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
 
-    <!--避免app被杀死 使用一个轻量级的进程-->
-    <service
-        android:name=".Service.DaemonService"/>
-    <!--取消服务-->
-    <service android:name=".Service.CancelService"/>
-  </application>
+    <application
+        android:name=".App"
+        android:allowBackup="true"
+        android:icon="@mipmap/default_ptr_wodfan_frame1"
+        android:label="@string/app_name"
+        android:logo="@mipmap/default_ptr_wodfan_frame2"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <!--Retrofit访问网络-->
+        <activity android:name=".activity.RetrofitActivity"/>
+        <!--图片缓存-->
+        <activity android:name=".activity.ImageCacheActivity"/>
+        <!--适配器页面-->
+        <activity android:name=".activity.DesignActivity"/>
+        <!--模仿聊天的页面-->
+        <activity android:name=".activity.ChatRecyclerActivity"/>
+        <!--理解scroller类-->
+        <activity android:name=".activity.ScrollerActivity"/>
+
+        <!--避免app被杀死 使用一个轻量级的进程-->
+        <service
+            android:name=".Service.DaemonService"
+            android:process=":service"/>
+        <!--取消服务-->
+        <service android:name=".Service.CancelService"/>
+
+        <activity android:name=".activity.ToolBarActivity"/>
+
+        <activity android:name=".activity.PopWindowActivity"/>
+        <activity android:name=".activity.SDCardDemoActivity"/>
+
+        <activity android:name=".activity.ChangeSkinActivity"/>
+    </application>
 </manifest>

@@ -8,130 +8,164 @@
     android:padding="4dp"
     tools:context="sh.ajb.com.endokhhtp.MainActivity">
 
-  <LinearLayout
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:layout_margin="2dp"
-      android:orientation="horizontal">
-
-    <Button
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:background="@drawable/shape_red"
-        android:onClick="toOkhttps"
-        android:text="okhttp访问"/>
+        android:layout_margin="2dp"
+        android:orientation="horizontal">
 
-    <Button
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/shape_red"
+            android:onClick="toOkhttps"
+            android:text="okhttp访问"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/shape_red"
+            android:onClick="toRetrofit"
+            android:text="Retrofit"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/shape_red"
+            android:onClick="toCache"
+            android:text="无网络缓存图片"/>
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:background="@drawable/shape_red"
-        android:onClick="toRetrofit"
-        android:text="Retrofit"/>
+        android:layout_margin="2dp"
+        android:orientation="horizontal">
 
-    <Button
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/shape_red"
+            android:onClick="toDialog"
+            android:text="单选对话框"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/shape_red"
+            android:onClick="toNotification"
+            android:text="Notification"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/shape_red"
+            android:onClick="toDesignNotification"
+            android:text="Design单选"/>
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
+        android:layout_margin="2dp"
         android:background="@drawable/shape_red"
-        android:onClick="toCache"
-        android:text="无网络缓存图片"/>
-  </LinearLayout>
+        android:orientation="horizontal">
 
-  <LinearLayout
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:layout_margin="2dp"
-      android:orientation="horizontal">
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/shape_red"
+            android:onClick="toAdapter"
+            android:text="适配器简单化"/>
 
-    <Button
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/shape_red"
+            android:onClick="toChart"
+            android:text="聊天页面"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/shape_red"
+            android:onClick="toScroller"
+            android:text="理解scroller类"/>
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
+        android:layout_margin="2dp"
         android:background="@drawable/shape_red"
-        android:onClick="toDialog"
-        android:text="单选对话框"/>
+        android:orientation="horizontal">
 
-    <Button
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/shape_red"
+            android:onClick="toService"
+            android:text="轻量级的服务"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/shape_red"
+            android:onClick="toToolbar"
+            android:text="ToolBar"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/shape_red"
+            android:onClick="popWindow"
+            android:text="popWindow"/>
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
+        android:layout_margin="2dp"
         android:background="@drawable/shape_red"
-        android:onClick="toNotification"
-        android:text="Notification"/>
+        android:orientation="horizontal">
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:background="@drawable/shape_red"
-        android:onClick="toDesignNotification"
-        android:text="Design单选"/>
-  </LinearLayout>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/shape_red"
+            android:onClick="toAlarmManager"
+            android:text="设置闹钟"/>
 
-  <LinearLayout
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:layout_margin="2dp"
-      android:background="@drawable/shape_red"
-      android:orientation="horizontal">
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/shape_red"
+            android:onClick="toSDK"
+            android:text="读取Sd卡"/>
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:background="@drawable/shape_red"
-        android:onClick="toAdapter"
-        android:text="适配器简单化"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/shape_red"
+            android:onClick="toSkin"
+            android:text="换肤功能"/>
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:background="@drawable/shape_red"
-        android:onClick="toChart"
-        android:text="聊天页面"/>
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:background="@drawable/shape_red"
-        android:onClick="toScroller"
-        android:text="理解scroller类"/>
-  </LinearLayout>
-
-  <LinearLayout
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:layout_margin="2dp"
-      android:background="@drawable/shape_red"
-      android:orientation="horizontal">
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:background="@drawable/shape_red"
-        android:onClick="toService"
-        android:text="轻量级的服务"/>
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:background="@drawable/shape_red"
-        android:onClick="toBindService"
-        android:text="BindService"/>
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:background="@drawable/shape_red"
-        android:text=""/>
-  </LinearLayout>
+    </LinearLayout>
 
 
 </LinearLayout>

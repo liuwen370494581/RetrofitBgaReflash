@@ -7,6 +7,7 @@ public class ChatModel {
     public String mMsg;
     public SendStatus mSendStatus;
     public UserType mUserType;
+
     public ChatModel(String msg, UserType userType, SendStatus sendStatus) {
         mMsg = msg;
         mUserType = userType;

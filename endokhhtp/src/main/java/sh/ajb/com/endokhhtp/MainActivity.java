@@ -1,8 +1,11 @@
 package sh.ajb.com.endokhhtp;
 
+import android.app.AlarmManager;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
+import android.app.Service;
+import android.app.TimePickerDialog;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -18,9 +21,11 @@ import android.support.v7.app.NotificationCompat;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.TimePicker;
 import android.widget.Toast;
 
 import java.io.IOException;
+import java.util.Calendar;
 import java.util.concurrent.TimeUnit;
 
 import okhttp3.CacheControl;
@@ -28,11 +33,16 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import sh.ajb.com.endokhhtp.Base.BaseActivity;
 import sh.ajb.com.endokhhtp.Service.DaemonService;
+import sh.ajb.com.endokhhtp.activity.ChangeSkinActivity;
 import sh.ajb.com.endokhhtp.activity.ChatRecyclerActivity;
 import sh.ajb.com.endokhhtp.activity.DesignActivity;
 import sh.ajb.com.endokhhtp.activity.ImageCacheActivity;
+import sh.ajb.com.endokhhtp.activity.PopWindowActivity;
 import sh.ajb.com.endokhhtp.activity.RetrofitActivity;
+import sh.ajb.com.endokhhtp.activity.SDCardDemoActivity;
 import sh.ajb.com.endokhhtp.activity.ScrollerActivity;
+import sh.ajb.com.endokhhtp.activity.ToolBarActivity;
+import sh.ajb.com.endokhhtp.utils.SnackbarUtil;
 
 public class MainActivity extends BaseActivity {
 
@@ -142,6 +152,47 @@ public class MainActivity extends BaseActivity {
         startService(new Intent(MainActivity.this, DaemonService.class));
     }
 
+    public void toToolbar(View view) {
+        startActivity(new Intent(MainActivity.this, ToolBarActivity.class));
+    }
 
+    public void popWindow(View view) {
+        startActivity(new Intent(MainActivity.this, PopWindowActivity.class));
+    }
+
+    AlarmManager aManager;
+    Calendar currentTime = Calendar.getInstance();
+
+    public void toAlarmManager(View view) {
+        //获取AlarmManager对象
+        aManager = (AlarmManager) getSystemService(Service.ALARM_SERVICE);
+        Calendar currentTime = Calendar.getInstance();
+        //创建一个TimePickerDialog实例，并把它显示出来
+        new TimePickerDialog(MainActivity.this, 0, new TimePickerDialog.OnTimeSetListener() {
+
+            @Override
+            public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                Intent intent = new Intent(MainActivity.this, PopWindowActivity.class);
+                PendingIntent pi = PendingIntent.getActivity(MainActivity.this, 0, intent, 0);
+                Calendar c = Calendar.getInstance();
+                c.setTimeInMillis(System.currentTimeMillis());
+                //根据用户选择时间来设置Calender对象
+                c.set(Calendar.HOUR, hourOfDay);
+                c.set(Calendar.MINUTE, minute);
+                aManager.set(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(), pi);
+                Toast.makeText(MainActivity.this, "闹铃设置成功啦！", Toast.LENGTH_SHORT).show();
+            }
+        }, currentTime.get(Calendar.HOUR_OF_DAY), currentTime.get(Calendar.MINUTE), false).show();
+
+    }
+
+
+    public void toSDK(View view) {
+        startActivity(new Intent(MainActivity.this, SDCardDemoActivity.class));
+    }
+
+    public void toSkin(View view) {
+        startActivity(new Intent(MainActivity.this, ChangeSkinActivity.class));
+    }
 
 }

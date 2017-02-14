@@ -1,0 +1,28 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#ffffff"
+                tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/ll_head_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="400dp"
+        android:orientation="vertical">
+        <!--这个图片按钮按下时弹出PopupWindow-->
+        <ImageButton
+            android:id="@+id/ib_operate_more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_launcher"/>
+        <!--这个按钮是测试当PoupWindow显示时点击此按钮没反应 因为此按钮没获取焦点-->
+        <Button
+            android:id="@+id/ib_operate_more2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginTop="200dp"
+            android:text="测试按钮"/>
+    </LinearLayout>
+</RelativeLayout>
