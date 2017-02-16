@@ -44,7 +44,9 @@
 
         <activity android:name=".activity.PopWindowActivity"/>
         <activity android:name=".activity.SDCardDemoActivity"/>
-
+        <!--换肤页面-->
         <activity android:name=".activity.ChangeSkinActivity"/>
+        <!--键盘页面-->
+        <activity android:name=".activity.KeyBoardActivity"/>
     </application>
 </manifest>

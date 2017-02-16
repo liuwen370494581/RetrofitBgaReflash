@@ -5,4 +5,7 @@
   <color name="colorAccent">#FF4081</color>
   <color name="Red">#71b1ec</color>
   <color name="navigationBarColor">#f46444</color>
+
+  <color name="grapbg">#C0c0c0</color>
+  <color name="white">#FFFFFF</color>
 </resources>
