@@ -182,5 +182,12 @@
             android:onClick="toKeyBoard"
             android:text="键盘密码"/>
 
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/shape_red"
+            android:onClick="toPickView"
+            android:text="pickView选择器"/>
     </LinearLayout>
 </LinearLayout>

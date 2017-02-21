@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="open"
+        android:text="选择"/>
+    <TextView
+        android:id="@+id/Main_tvSelected"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="16sp"
+        android:visibility="visible" />
+    <LinearLayout
+        android:gravity="bottom"
+        android:id="@+id/Main_pvLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:orientation="vertical">
+
+        <sh.ajb.com.endokhhtp.widget.PickValueView
+            android:id="@+id/pickValues"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
+
+        </sh.ajb.com.endokhhtp.widget.PickValueView>
+    </LinearLayout>
+</LinearLayout>

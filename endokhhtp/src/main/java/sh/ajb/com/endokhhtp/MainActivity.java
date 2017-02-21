@@ -38,6 +38,7 @@ import sh.ajb.com.endokhhtp.activity.ChatRecyclerActivity;
 import sh.ajb.com.endokhhtp.activity.DesignActivity;
 import sh.ajb.com.endokhhtp.activity.ImageCacheActivity;
 import sh.ajb.com.endokhhtp.activity.KeyBoardActivity;
+import sh.ajb.com.endokhhtp.activity.PickViewActivity;
 import sh.ajb.com.endokhhtp.activity.PopWindowActivity;
 import sh.ajb.com.endokhhtp.activity.RetrofitActivity;
 import sh.ajb.com.endokhhtp.activity.SDCardDemoActivity;
@@ -198,5 +199,9 @@ public class MainActivity extends BaseActivity {
 
     public void toKeyBoard(View view) {
         startActivity(new Intent(MainActivity.this, KeyBoardActivity.class));
+    }
+
+    public void toPickView(View view) {
+        startActivity(new Intent(MainActivity.this, PickViewActivity.class));
     }
 }
