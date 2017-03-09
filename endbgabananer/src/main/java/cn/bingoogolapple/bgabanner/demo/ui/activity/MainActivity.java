@@ -43,7 +43,6 @@ public class MainActivity extends AppCompatActivity implements BGABanner.OnItemC
 
         setTitle("BGABannerDemo");
         mEngine = App.getInstance().getEngine();
-
         initView();
         setListener();
         loadData();

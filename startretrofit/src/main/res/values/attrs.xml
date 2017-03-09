@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="LoadingLayout">
+        <attr name="loadingLayout" format="reference" />
+        <attr name="noResultLayout" format="reference" />
+        <attr name="netErrorLayout" format="reference" />
+        <attr name="netErrorClickableView" format="reference" />
+    </declare-styleable>
+
+</resources>

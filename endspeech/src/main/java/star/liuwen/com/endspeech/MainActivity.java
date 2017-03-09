@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         SpeechSynthesizer mTts = SpeechSynthesizer.createSynthesizer(this, null);
         //2.合成参数设置，详见《 MSC Reference Manual》 SpeechSynthesizer 类
         //设置发音人（更多在线发音人，用户可参见 附录 13.2
-        mTts.setParameter(SpeechConstant.VOICE_NAME, "vixyun"); // 设置发音人
+        mTts.setParameter(SpeechConstant.VOICE_NAME, "vixqa"); // 设置发音人
         mTts.setParameter(SpeechConstant.SPEED, "50");// 设置语速
         mTts.setParameter(SpeechConstant.VOLUME, "80");// 设置音量，范围 0~100
         mTts.setParameter(SpeechConstant.ENGINE_TYPE, SpeechConstant.TYPE_CLOUD); //设置云端

@@ -84,8 +84,6 @@ public class MainActivity extends BaseActivity implements BottomTabBar.OnSelectL
                 break;
             default:
                 break;
-
-
         }
     }
 }
