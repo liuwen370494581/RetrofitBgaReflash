@@ -19,6 +19,10 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+/**
+ * 	结合Retrofit和okhttp来访问网络 各种bananer广告头
+ */
+
 public class MainActivity extends AppCompatActivity implements BGABanner.OnItemClickListener, BGABanner.Adapter {
     private BGABanner mDefaultBanner;
     private BGABanner mCubeBanner;
