@@ -29,6 +29,10 @@ import java.util.LinkedHashMap;
 
 import star.liuwen.com.endspeech.Utils.JsonParser;
 
+/**
+ * 集成讯飞的语音助手 需要自己去官网注册AppID并下载sdk tips:sdk和appiD是配套的 不要用别人的sdk
+ */
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private static final String TAG = MainActivity.class.getSimpleName();
