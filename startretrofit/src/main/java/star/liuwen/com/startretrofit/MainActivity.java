@@ -22,6 +22,9 @@ import star.liuwen.com.startretrofit.RxjavaUtils.interceptor.RxHelper;
 import star.liuwen.com.startretrofit.api.ApiService;
 import star.liuwen.com.startretrofit.bean.Banner;
 
+/**
+ * 极致简单的retrofit和Rxjava 采用链式调用
+ */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private Button button1, button2, button3;
     private Dialog dialog;
@@ -63,7 +66,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     /**
      * 单一请求链式操作，直观明了
-     * <p/>
+     * <p>
      * 无loading对话框
      */
     private void request1() {
