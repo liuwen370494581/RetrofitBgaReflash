@@ -17,6 +17,10 @@ import star.liuwen.com.endrecyclerviewdemo.Bean.AnimalModel;
 import star.liuwen.com.endrecyclerviewdemo.Bean.ModelBase;
 import star.liuwen.com.endrecyclerviewdemo.Bean.PersonModel;
 
+/**
+ * RecyclerViewDemo 实现了两组不同的数据源（不同的pjo对象）构成的数据 用recyclerView显示
+ */
+
 public class MainActivity extends AppCompatActivity {
 
     RecyclerView rvModel;
