@@ -6,27 +6,18 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
 import android.app.TimePickerDialog;
-import android.content.ComponentName;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.ServiceConnection;
-import android.os.Handler;
-import android.os.IBinder;
-import android.os.Message;
 import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.app.NotificationCompat;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
-import java.io.IOException;
 import java.util.Calendar;
-import java.util.concurrent.TimeUnit;
 
 import okhttp3.CacheControl;
 import okhttp3.OkHttpClient;
@@ -35,16 +26,15 @@ import sh.ajb.com.endokhhtp.Base.BaseActivity;
 import sh.ajb.com.endokhhtp.Service.DaemonService;
 import sh.ajb.com.endokhhtp.activity.ChangeSkinActivity;
 import sh.ajb.com.endokhhtp.activity.ChatRecyclerActivity;
-import sh.ajb.com.endokhhtp.activity.DesignActivity;
+import sh.ajb.com.endokhhtp.activity.BGAAdapterActivity;
 import sh.ajb.com.endokhhtp.activity.ImageCacheActivity;
 import sh.ajb.com.endokhhtp.activity.KeyBoardActivity;
-import sh.ajb.com.endokhhtp.activity.PickViewActivity;
+import sh.ajb.com.endokhhtp.activity.RxJavaActivity;
 import sh.ajb.com.endokhhtp.activity.PopWindowActivity;
 import sh.ajb.com.endokhhtp.activity.RetrofitActivity;
 import sh.ajb.com.endokhhtp.activity.SDCardDemoActivity;
 import sh.ajb.com.endokhhtp.activity.ScrollerActivity;
 import sh.ajb.com.endokhhtp.activity.ToolBarActivity;
-import sh.ajb.com.endokhhtp.utils.SnackbarUtil;
 
 public class MainActivity extends BaseActivity {
 
@@ -62,12 +52,6 @@ public class MainActivity extends BaseActivity {
     NotificationManager notificationManager;
     int notifyId = 100;
 
-    private Handler handler = new Handler() {
-        @Override
-        public void handleMessage(Message msg) {
-            textView.setText(msg.what + "\n" + msg.obj.toString());
-        }
-    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -139,7 +123,7 @@ public class MainActivity extends BaseActivity {
     }
 
     public void toAdapter(View view) {
-        startActivity(new Intent(MainActivity.this, DesignActivity.class));
+        startActivity(new Intent(MainActivity.this, BGAAdapterActivity.class));
     }
 
     public void toChart(View view) {
@@ -201,7 +185,7 @@ public class MainActivity extends BaseActivity {
         startActivity(new Intent(MainActivity.this, KeyBoardActivity.class));
     }
 
-    public void toPickView(View view) {
-        startActivity(new Intent(MainActivity.this, PickViewActivity.class));
+    public void toRxJava(View view) {
+        startActivity(new Intent(MainActivity.this, RxJavaActivity.class));
     }
 }

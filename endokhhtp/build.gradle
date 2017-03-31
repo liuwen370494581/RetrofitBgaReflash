@@ -29,14 +29,19 @@ dependencies {
     compile 'com.android.support:recyclerview-v7:23.4.0'
     compile 'com.android.support:design:23.4.0'
 
+    //加载图片的最好框架
     compile 'com.github.bumptech.glide:glide:3.7.0'
+    //rxjava相关依赖 retrofit
     compile 'com.squareup.retrofit2:retrofit:2.1.0'
     compile 'io.reactivex:rxjava:1.2.3'
     compile 'io.reactivex:rxandroid:1.2.1'
+    // 工厂的gson的制造器
     compile 'com.squareup.retrofit2:converter-gson:2.1.0'
+    //okHttp的拦截器
     compile 'com.squareup.okhttp3:logging-interceptor:3.4.1'
+    //okHttp
     compile 'com.squareup.okhttp3:okhttp:3.4.1'
-  
+    //王浩的BGA系列
     compile 'cn.bingoogolapple:bga-banner:2.1.0@aar'
     compile 'com.nineoldandroids:library:2.4.0'
     compile 'cn.bingoogolapple:bga-adapter:1.1.8@aar'

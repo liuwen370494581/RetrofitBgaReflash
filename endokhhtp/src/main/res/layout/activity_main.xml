@@ -187,7 +187,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@drawable/shape_red"
-            android:onClick="toPickView"
-            android:text="pickView选择器"/>
+            android:onClick="toRxJava"
+            android:text="Rxjava理解"/>
     </LinearLayout>
 </LinearLayout>

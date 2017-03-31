@@ -21,8 +21,6 @@ import com.bumptech.glide.Glide;
 
 import java.util.List;
 
-import cn.bingoogolapple.androidcommon.adapter.BGARecyclerViewAdapter;
-import cn.bingoogolapple.androidcommon.adapter.BGAViewHolderHelper;
 import cn.bingoogolapple.bgabanner.BGABanner;
 import cn.bingoogolapple.refreshlayout.BGARefreshLayout;
 import retrofit2.Call;
@@ -34,11 +32,9 @@ import sh.ajb.com.endokhhtp.App;
 import cn.bingoogolapple.androidcommon.adapter.BGAOnItemChildCheckedChangeListener;
 import cn.bingoogolapple.androidcommon.adapter.BGAOnItemChildClickListener;
 import cn.bingoogolapple.androidcommon.adapter.BGAOnItemChildLongClickListener;
-import cn.bingoogolapple.androidcommon.adapter.BGAOnNoDoubleClickListener;
 import cn.bingoogolapple.androidcommon.adapter.BGAOnRVItemChildTouchListener;
 import cn.bingoogolapple.androidcommon.adapter.BGAOnRVItemClickListener;
 import cn.bingoogolapple.androidcommon.adapter.BGAOnRVItemLongClickListener;
-import sh.ajb.com.endokhhtp.BGAAdapter.BGARecyclerViewHolder;
 import sh.ajb.com.endokhhtp.Base.BaseActivity;
 import sh.ajb.com.endokhhtp.Engine;
 import sh.ajb.com.endokhhtp.R;
@@ -46,13 +42,12 @@ import sh.ajb.com.endokhhtp.View.DefineBAGRefreshWithLoadView;
 import sh.ajb.com.endokhhtp.dialog.LoadDialog;
 import sh.ajb.com.endokhhtp.model.BannerModel;
 import sh.ajb.com.endokhhtp.model.NormalModel;
-import sh.ajb.com.endokhhtp.model.RefreshModel;
 import sh.ajb.com.endokhhtp.utils.SnackbarUtil;
 
 /**
  * Created by liuwen on 2016/12/19.
  */
-public class DesignActivity extends BaseActivity implements BGARefreshLayout.BGARefreshLayoutDelegate, BGAOnRVItemClickListener, BGAOnRVItemLongClickListener, BGAOnItemChildClickListener, BGAOnItemChildLongClickListener, BGAOnRVItemChildTouchListener, BGAOnItemChildCheckedChangeListener {
+public class BGAAdapterActivity extends BaseActivity implements BGARefreshLayout.BGARefreshLayoutDelegate, BGAOnRVItemClickListener, BGAOnRVItemLongClickListener, BGAOnItemChildClickListener, BGAOnItemChildLongClickListener, BGAOnRVItemChildTouchListener, BGAOnItemChildCheckedChangeListener {
     private RecyclerView mContentRv;
     private BGABanner mBanner;
     private NormalRecyclerViewAdapter mContentAdapter;
@@ -86,7 +81,7 @@ public class DesignActivity extends BaseActivity implements BGARefreshLayout.BGA
         //设置刷新和加载监听
         mBGARefreshLayout.setDelegate(this);
 
-        mDefineBAGRefreshWithLoadView = new DefineBAGRefreshWithLoadView(DesignActivity.this, true, true);
+        mDefineBAGRefreshWithLoadView = new DefineBAGRefreshWithLoadView(BGAAdapterActivity.this, true, true);
         //设置刷新样式
         mBGARefreshLayout.setRefreshViewHolder(mDefineBAGRefreshWithLoadView);
         mDefineBAGRefreshWithLoadView.updateLoadingMoreText("加载更多");

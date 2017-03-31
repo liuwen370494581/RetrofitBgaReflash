@@ -27,7 +27,7 @@
         <!--图片缓存-->
         <activity android:name=".activity.ImageCacheActivity"/>
         <!--适配器页面-->
-        <activity android:name=".activity.DesignActivity"/>
+        <activity android:name=".activity.BGAAdapterActivity"/>
         <!--模仿聊天的页面-->
         <activity android:name=".activity.ChatRecyclerActivity"/>
         <!--理解scroller类-->
@@ -49,6 +49,6 @@
         <!--键盘页面-->
         <activity android:name=".activity.KeyBoardActivity"/>
         <!--pickView选择页面-->
-        <activity android:name=".activity.PickViewActivity"/>
+        <activity android:name=".activity.RxJavaActivity"/>
     </application>
 </manifest>
